@@ -26,6 +26,7 @@ interface SkillGroup {
 export class App {
   readonly filters: Array<ProjectCategory | 'All'> = ['All', 'Angular', 'JavaScript', 'UI'];
   readonly activeFilter = signal<ProjectCategory | 'All'>('All');
+  readonly isMenuOpen = signal(false);
 
   readonly contact = {
     name: 'Malak Mohamed Mostafa',
@@ -165,5 +166,13 @@ export class App {
 
   setFilter(filter: ProjectCategory | 'All'): void {
     this.activeFilter.set(filter);
+  }
+
+  toggleMenu(): void {
+    this.isMenuOpen.update((isOpen) => !isOpen);
+  }
+
+  closeMenu(): void {
+    this.isMenuOpen.set(false);
   }
 }
