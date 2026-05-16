@@ -1,0 +1,207 @@
+<header class="site-header">
+  <a class="brand" href="#home" aria-label="Go to home">
+    <span>MMM</span>
+  </a>
+
+  <nav class="nav-links" aria-label="Main navigation">
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="home">
+  <section class="hero section-shell">
+    <div class="hero-copy">
+      <p class="eyebrow">Angular Front-End Developer</p>
+      <h1>Building responsive web products with clean UI and reliable Angular architecture.</h1>
+      <p class="intro">
+        I am {{ contact.name }}, a software engineering student and front-end developer focused on
+        Angular, TypeScript, API integration, reusable components, and thoughtful responsive
+        experiences.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#projects" aria-label="View selected projects">
+          <span aria-hidden="true">-></span>
+          View Projects
+        </a>
+        <a
+          class="btn btn-ghost"
+          [href]="gmailComposeUrl"
+          target="_blank"
+          rel="noopener"
+          aria-label="Send email with Gmail"
+        >
+          <span aria-hidden="true">@</span>
+          Hire Me
+        </a>
+      </div>
+    </div>
+
+    <aside class="profile-panel" aria-label="Profile summary">
+      <div class="avatar-wrap">
+        <img [src]="contact.avatar" [alt]="contact.name" />
+      </div>
+      <div>
+        <p class="panel-name">{{ contact.name }}</p>
+        <p class="panel-role">{{ contact.role }}</p>
+      </div>
+      <div class="availability">
+        <span></span>
+        Available for front-end roles and freelance Angular work
+      </div>
+    </aside>
+  </section>
+
+  <section class="stats section-shell" aria-label="Portfolio highlights">
+    @for (item of highlights; track item.label) {
+      <article>
+        <strong>{{ item.value }}</strong>
+        <span>{{ item.label }}</span>
+      </article>
+    }
+  </section>
+
+  <section class="section-shell split-section" id="skills">
+    <div class="section-heading">
+      <p class="eyebrow">Technical Toolkit</p>
+      <h2>Front-end stack with strong computer science fundamentals.</h2>
+    </div>
+
+    <div class="skill-grid">
+      @for (group of skillGroups; track group.title) {
+        <article class="skill-card">
+          <h3>{{ group.title }}</h3>
+          <div class="tag-list">
+            @for (skill of group.skills; track skill) {
+              <span>{{ skill }}</span>
+            }
+          </div>
+        </article>
+      }
+    </div>
+  </section>
+
+  <section class="section-shell projects-section" id="projects">
+    <div class="section-heading">
+      <p class="eyebrow">Selected Work</p>
+      <h2>Projects that show production habits, API work, and responsive implementation.</h2>
+    </div>
+
+    <div class="filter-bar" aria-label="Project filters">
+      @for (filter of filters; track filter) {
+        <button
+          type="button"
+          [class.active]="activeFilter() === filter"
+          (click)="setFilter(filter)"
+          [attr.aria-pressed]="activeFilter() === filter"
+        >
+          {{ filter }}
+        </button>
+      }
+    </div>
+
+    <div class="project-grid">
+      @for (project of filteredProjects(); track project.title) {
+        <article class="project-card" [class.featured]="project.featured">
+          <div class="project-topline">
+            <span>{{ project.category }}</span>
+            @if (project.featured) {
+              <strong>Featured</strong>
+            }
+          </div>
+          <h3>{{ project.title }}</h3>
+          <p class="project-type">{{ project.type }}</p>
+          <p>{{ project.description }}</p>
+          <div class="tag-list">
+            @for (tech of project.stack; track tech) {
+              <span>{{ tech }}</span>
+            }
+          </div>
+          <a class="project-link" [href]="project.link" target="_blank" rel="noopener">
+            Live Demo
+            <span aria-hidden="true">^</span>
+          </a>
+        </article>
+      }
+    </div>
+  </section>
+
+  <section class="section-shell timeline-section" id="experience">
+    <div class="section-heading">
+      <p class="eyebrow">Experience & Education</p>
+      <h2>Learning, teaching, and shipping practical front-end work.</h2>
+    </div>
+
+    <div class="timeline-grid">
+      <article class="timeline-item">
+        <span class="timeline-date">Oct 2024 - Present</span>
+        <h3>Programming Instructor</h3>
+        <p class="muted">3C - Creative Children Community | Cairo, Egypt</p>
+        <p>
+          Teach Scratch, Python, HTML, CSS, and App Inventor through interactive lessons,
+          project-based learning, and personalized student support.
+        </p>
+      </article>
+
+      <article class="timeline-item">
+        <span class="timeline-date">Oct 2022 - Jun 2026</span>
+        <h3>Bachelor of Software Engineering</h3>
+        <p class="muted">
+          Faculty of Computer Science and Artificial Intelligence, Capital University | Cairo
+        </p>
+        <p>GPA: 3.3 / 4.0, with focus on OOP, data structures, algorithms, and problem solving.</p>
+      </article>
+
+      <article class="timeline-item">
+        <span class="timeline-date">Mar 2025 - Sep 2025</span>
+        <h3>Front-End Web Development</h3>
+        <p class="muted">Route Academy</p>
+        <p>
+          Studied Angular, JavaScript, TypeScript, SASS, Bootstrap, Tailwind, APIs, Git, hosting,
+          and asynchronous architecture.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section-shell activities-section">
+    <div class="section-heading">
+      <p class="eyebrow">Community</p>
+      <h2>Problem solving and continuous learning beyond coursework.</h2>
+    </div>
+
+    <div class="activity-list">
+      <p><strong>Helwan ICPC Community:</strong> Competitive programming practice using C++.</p>
+      <p><strong>Training Camp - Helwan:</strong> Algorithmic challenges using C.</p>
+      <p><strong>Minders'23 Workshop:</strong> Mentorship workshop in HTML, CSS, and JavaScript.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="contact-section" id="contact">
+  <div class="section-shell footer-grid">
+    <div class="footer-intro">
+      <p class="eyebrow">Contact</p>
+      <h2>Have an Angular project or front-end role in mind?</h2>
+      <p class="footer-copy">
+        I am open to internships, junior front-end roles, and freelance Angular interfaces.
+      </p>
+      <p class="footer-note">Based in Cairo. Available for remote and hybrid opportunities.</p>
+    </div>
+
+    <div class="contact-links">
+      <a [href]="'mailto:' + contact.email">{{ contact.email }}</a>
+      <a [href]="contact.linkedin" target="_blank" rel="noopener">LinkedIn Profile</a>
+      <a [href]="contact.github" target="_blank" rel="noopener">GitHub Portfolio</a>
+      <span>{{ contact.phone }}</span>
+    </div>
+  </div>
+
+  <div class="section-shell footer-bottom">
+    <span>{{ contact.name }}</span>
+    <span>{{ contact.location }}</span>
+  </div>
+</footer>
