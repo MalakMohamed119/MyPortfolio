@@ -42,12 +42,6 @@ export class App {
     this.contact.email,
   )}`;
 
-  readonly highlights = [
-    { value: '10+', label: 'Deployed projects' },
-    { value: '3.3', label: 'GPA / 4.0' },
-    { value: '2026', label: 'Software engineering graduate' },
-  ];
-
   readonly skillGroups: SkillGroup[] = [
     {
       title: 'Frontend',

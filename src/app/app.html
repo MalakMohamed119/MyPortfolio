@@ -1,11 +1,12 @@
 <header class="site-header">
   <a class="brand" href="#home" aria-label="Go to home">
-    <span>MMM</span>
+    <img src="mmm-logo.png" alt="" aria-hidden="true" />
   </a>
 
   <nav class="nav-links" aria-label="Main navigation">
-    <a href="#projects">Projects</a>
+    <a href="#education">Education</a>
     <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
     <a href="#experience">Experience</a>
     <a href="#contact">Contact</a>
   </nav>
@@ -15,12 +16,17 @@
   <section class="hero section-shell">
     <div class="hero-copy">
       <p class="eyebrow">Angular Front-End Developer</p>
-      <h1>Building responsive web products with clean UI and reliable Angular architecture.</h1>
+      <h1>Designing reliable Angular interfaces with clean structure and polished UI.</h1>
       <p class="intro">
-        I am {{ contact.name }}, a software engineering student and front-end developer focused on
-        Angular, TypeScript, API integration, reusable components, and thoughtful responsive
-        experiences.
+        I am {{ contact.name }}, a software engineering student focused on Angular, TypeScript,
+        API integration, reusable components, and responsive product experiences.
       </p>
+
+      <div class="hero-meta" aria-label="Core strengths">
+        <span>Angular</span>
+        <span>TypeScript</span>
+        <span>Responsive UI</span>
+      </div>
 
       <div class="hero-actions">
         <a class="btn btn-primary" href="#projects" aria-label="View selected projects">
@@ -50,18 +56,35 @@
       </div>
       <div class="availability">
         <span></span>
-        Available for front-end roles and freelance Angular work
+        Available for junior front-end roles and freelance Angular work
       </div>
     </aside>
   </section>
 
-  <section class="stats section-shell" aria-label="Portfolio highlights">
-    @for (item of highlights; track item.label) {
-      <article>
-        <strong>{{ item.value }}</strong>
-        <span>{{ item.label }}</span>
-      </article>
-    }
+  <section class="section-shell education-section" id="education">
+    <div class="section-heading">
+      <p class="eyebrow">Education</p>
+      <h2>Software engineering background with a strong academic base.</h2>
+    </div>
+
+    <article class="education-card">
+      <div>
+        <span class="timeline-date">Oct 2022 - Jun 2026</span>
+        <h3>Bachelor of Software Engineering</h3>
+        <p class="muted">
+          Faculty of Computers and Artificial Intelligence, Capital University | Cairo
+        </p>
+        <p>
+          Coursework focused on OOP, data structures, algorithms, software engineering, and
+          practical problem solving.
+        </p>
+      </div>
+
+      <div class="education-meta" aria-label="Academic details">
+        <span>GPA: <strong>3.3 / 4.0</strong></span>
+        <span>Expected graduation: <strong>2026</strong></span>
+      </div>
+    </article>
   </section>
 
   <section class="section-shell split-section" id="skills">
@@ -131,8 +154,8 @@
 
   <section class="section-shell timeline-section" id="experience">
     <div class="section-heading">
-      <p class="eyebrow">Experience & Education</p>
-      <h2>Learning, teaching, and shipping practical front-end work.</h2>
+      <p class="eyebrow">Experience</p>
+      <h2>Teaching, learning, and shipping practical front-end work.</h2>
     </div>
 
     <div class="timeline-grid">
@@ -144,15 +167,6 @@
           Teach Scratch, Python, HTML, CSS, and App Inventor through interactive lessons,
           project-based learning, and personalized student support.
         </p>
-      </article>
-
-      <article class="timeline-item">
-        <span class="timeline-date">Oct 2022 - Jun 2026</span>
-        <h3>Bachelor of Software Engineering</h3>
-        <p class="muted">
-          Faculty of Computer Science and Artificial Intelligence, Capital University | Cairo
-        </p>
-        <p>GPA: 3.3 / 4.0, with focus on OOP, data structures, algorithms, and problem solving.</p>
       </article>
 
       <article class="timeline-item">
@@ -193,7 +207,7 @@
     </div>
 
     <div class="contact-links">
-      <a [href]="'mailto:' + contact.email">{{ contact.email }}</a>
+      <a [href]="gmailComposeUrl" target="_blank" rel="noopener">{{ contact.email }}</a>
       <a [href]="contact.linkedin" target="_blank" rel="noopener">LinkedIn Profile</a>
       <a [href]="contact.github" target="_blank" rel="noopener">GitHub Portfolio</a>
       <span>{{ contact.phone }}</span>
