@@ -23,8 +23,8 @@ type Certificate = {
   imageSrc: string;
   issuer: string;
   year: string;
+  skills?: string[];
 };
-
 
 @Component({
   selector: 'app-root',
@@ -34,6 +34,10 @@ type Certificate = {
 })
 export class App implements AfterViewInit {
   readonly filters: Array<ProjectCategory | 'All'> = ['All', 'Angular', 'JavaScript', 'UI'];
+
+  // Certificates modal state
+  readonly selectedCertificate = signal<Certificate | null>(null);
+
   readonly activeFilter = signal<ProjectCategory | 'All'>('All');
   readonly isMenuOpen = signal(false);
 
@@ -73,25 +77,27 @@ export class App implements AfterViewInit {
 
   readonly certificates: Certificate[] = [
     {
-      title: 'Front-End Excellence',
-      issuer: 'Project & Coursework',
-      year: '2026',
-      imageSrc: 'Screenshot 2026-05-20 184836.png',
-    },
-    {
-      title: 'Web Development',
-      issuer: 'Hands-on Learning',
-      year: '2026',
-      imageSrc: 'Screenshot 2026-05-20 185110.jpg',
-    },
-    {
-      title: 'Angular Skills',
-      issuer: 'Training & Practice',
-      year: '2026',
+      title: 'MEAN Stack Development',
+      issuer: 'Information Technology Institute (ITI)',
+      year: 'Aug 2025',
       imageSrc: 'Screenshot 2026-05-20 185157.png',
+      skills: ['TypeScript', 'MongoDB', 'Angular']
+    },
+    {
+      title: 'Front-End Development Certificate',
+      issuer: 'Route',
+      year: 'Sep 2025',
+      imageSrc: 'Screenshot 2026-05-20 184836.png',
+      skills: ['JavaScript', 'jQuery', 'TypeScript', 'Tailwind CSS', 'Angular', 'HTML5', 'Bootstrap']
+    },
+    {
+      title: 'Front-End Web Development(Css-Html-javascript)',
+      issuer: 'Minders',
+      year: 'Sep 2023',
+      imageSrc: 'Screenshot 2026-05-20 185110.jpg',
+      skills: ['JavaScript', 'HTML5', 'CSS']
     },
   ];
-
 
   readonly projects: Project[] = [
     {
@@ -208,12 +214,26 @@ export class App implements AfterViewInit {
     this.isMenuOpen.set(false);
   }
 
+  openCertificate(cert: Certificate): void {
+    this.selectedCertificate.set(cert);
+  }
+
+  closeCertificateModal(): void {
+    this.selectedCertificate.set(null);
+  }
+
   ngAfterViewInit(): void {
     AOS.init({
       duration: 800,
       easing: 'ease-out-cubic',
       once: true,
       offset: 100,
+    });
+
+    window.addEventListener('keydown', (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        this.closeCertificateModal();
+      }
     });
   }
 }
