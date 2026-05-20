@@ -1,4 +1,5 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component, AfterViewInit, computed, signal } from '@angular/core';
+import AOS from 'aos';
 
 type ProjectCategory = 'Angular' | 'JavaScript' | 'UI';
 
@@ -17,13 +18,21 @@ interface SkillGroup {
   skills: string[];
 }
 
+type Certificate = {
+  title: string;
+  imageSrc: string;
+  issuer: string;
+  year: string;
+};
+
+
 @Component({
   selector: 'app-root',
   imports: [],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
-export class App {
+export class App implements AfterViewInit {
   readonly filters: Array<ProjectCategory | 'All'> = ['All', 'Angular', 'JavaScript', 'UI'];
   readonly activeFilter = signal<ProjectCategory | 'All'>('All');
   readonly isMenuOpen = signal(false);
@@ -62,6 +71,28 @@ export class App {
     },
   ];
 
+  readonly certificates: Certificate[] = [
+    {
+      title: 'Front-End Excellence',
+      issuer: 'Project & Coursework',
+      year: '2026',
+      imageSrc: 'Screenshot 2026-05-20 184836.png',
+    },
+    {
+      title: 'Web Development',
+      issuer: 'Hands-on Learning',
+      year: '2026',
+      imageSrc: 'Screenshot 2026-05-20 185110.jpg',
+    },
+    {
+      title: 'Angular Skills',
+      issuer: 'Training & Practice',
+      year: '2026',
+      imageSrc: 'Screenshot 2026-05-20 185157.png',
+    },
+  ];
+
+
   readonly projects: Project[] = [
     {
       title: 'LoCum',
@@ -91,6 +122,7 @@ export class App {
         'Movie discovery app integrated with external APIs, asynchronous loading states, and responsive Bootstrap layouts.',
       stack: ['Angular', 'TypeScript', 'Bootstrap', 'API Integration'],
       link: 'https://movie-night-seven.vercel.app',
+      featured: true,
     },
     {
       title: 'Weather App',
@@ -174,5 +206,14 @@ export class App {
 
   closeMenu(): void {
     this.isMenuOpen.set(false);
+  }
+
+  ngAfterViewInit(): void {
+    AOS.init({
+      duration: 800,
+      easing: 'ease-out-cubic',
+      once: true,
+      offset: 100,
+    });
   }
 }
