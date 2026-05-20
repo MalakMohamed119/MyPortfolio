@@ -1,7 +1,8 @@
 import { Component, AfterViewInit, computed, signal } from '@angular/core';
 import AOS from 'aos';
 
-type ProjectCategory = 'Angular' | 'JavaScript' | 'UI';
+// تم توسيع الفئات لتشمل الـ Full-Stack والجانب التعليمي
+type ProjectCategory = 'Angular' | 'JavaScript' | 'UI' | 'Full-Stack' | 'Educational';
 
 interface Project {
   title: string;
@@ -33,7 +34,7 @@ type Certificate = {
   styleUrl: './app.scss',
 })
 export class App implements AfterViewInit {
-  readonly filters: Array<ProjectCategory | 'All'> = ['All', 'Angular', 'JavaScript', 'UI'];
+  readonly filters: Array<ProjectCategory | 'All'> = ['All', 'Angular', 'Full-Stack', 'JavaScript', 'UI', 'Educational'];
 
   // Certificates modal state
   readonly selectedCertificate = signal<Certificate | null>(null);
@@ -43,7 +44,7 @@ export class App implements AfterViewInit {
 
   readonly contact = {
     name: 'Malak Mohamed Mostafa',
-    role: 'Front-End Developer | Angular Developer',
+    role: 'Software Engineer | Front-End & Angular Developer',
     location: '15 May City, Helwan, Cairo',
     email: 'malk.mohmed211@gmail.com',
     phone: '01148403342 / 01126746232',
@@ -56,9 +57,10 @@ export class App implements AfterViewInit {
     this.contact.email,
   )}`;
 
+  // تم إضافة المهارات الجديدة (React, ASP.NET, BI Tools)
   readonly skillGroups: SkillGroup[] = [
     {
-      title: 'Frontend',
+      title: 'Frontend Development',
       skills: ['Angular', 'TypeScript', 'JavaScript ES6+', 'HTML5', 'CSS3', 'SCSS', 'SASS'],
     },
     {
@@ -66,12 +68,12 @@ export class App implements AfterViewInit {
       skills: ['Bootstrap 5', 'Tailwind CSS', 'Responsive Design', 'Figma', 'Chrome DevTools'],
     },
     {
-      title: 'Engineering',
-      skills: ['API Integration', 'RxJS', 'Async JavaScript', 'Reusable Components', 'Git & GitHub'],
+      title: 'Engineering & Logic',
+      skills: ['API Integration', 'RxJS', 'Drools', 'Async Programming', 'Git & GitHub'],
     },
     {
-      title: 'Programming',
-      skills: ['C', 'C++', 'Java', 'Python', 'OOP', 'Data Structures', 'Algorithms'],
+      title: 'Programming Basics',
+      skills: ['C', 'C++', 'Python', 'OOP', 'Data Structures', 'Algorithms'],
     },
   ];
 
@@ -101,6 +103,24 @@ export class App implements AfterViewInit {
 
   readonly projects: Project[] = [
     {
+      title: 'RElief',
+      type: 'Sports Suitability Assessment System',
+      category: 'Full-Stack',
+      description: 'Complex logic-driven system featuring distinct parent and child user flows, powered by a robust decision engine using Drools.',
+      stack: ['ASP.NET Core', 'Angular', 'Drools', 'SQL'],
+      link: '#', // حطي لينك الجيت هب او اللايف هنا
+      featured: true,
+    },
+    {
+      title: 'Front-End Interview Q&A Guide',
+      type: 'Technical Documentation & Community Resource',
+      category: 'Educational',
+      description: 'A comprehensive, focused technical guide created to help front-end developers master JavaScript deep concepts, CSS, and HTML semantics.',
+      stack: ['JavaScript', 'HTML Semantics', 'CSS', 'Knowledge Sharing'],
+      link: '#', // حطي لينك البوست او الدوكيومنت هنا
+      featured: true,
+    },
+    {
       title: 'LoCum',
       type: 'Freelance healthcare staffing platform',
       category: 'Angular',
@@ -118,7 +138,6 @@ export class App implements AfterViewInit {
         'Full e-commerce experience with authentication, cart management, dynamic API data, and payment workflow simulation.',
       stack: ['Angular', 'TypeScript', 'RxJS', 'Tailwind CSS'],
       link: 'https://e-commerce-five-kappa-11.vercel.app',
-      featured: true,
     },
     {
       title: 'Movie Night',
@@ -128,7 +147,6 @@ export class App implements AfterViewInit {
         'Movie discovery app integrated with external APIs, asynchronous loading states, and responsive Bootstrap layouts.',
       stack: ['Angular', 'TypeScript', 'Bootstrap', 'API Integration'],
       link: 'https://movie-night-seven.vercel.app',
-      featured: true,
     },
     {
       title: 'Weather App',
