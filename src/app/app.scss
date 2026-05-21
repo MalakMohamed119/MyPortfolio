@@ -1,3 +1,21 @@
+.angular-card {
+  background: linear-gradient(145deg, #241f20, #7e1830 58%, #a86d2d);
+  color: #fff1ea;
+}
+.angular-card h3,
+.angular-card .project-link,
+.angular-card .project-topline {
+  color: #ffffff;
+}
+.angular-card .project-type,
+.angular-card p {
+  color: #ffe3d8;
+}
+.angular-card .tag-list span {
+  color: #4a111d;
+  background: linear-gradient(135deg, #fff0e8, #ffe8dc);
+  border: 1px solid rgba(157, 31, 59, 0.15);
+}
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:wght@700;800;900&display=swap');
 
 :host {
@@ -325,9 +343,22 @@ h3 { color: var(--charcoal); font-size: 1.05rem; line-height: 1.2; }
     .project-type, p { color: #ffe3d8; }
     .tag-list span { color: #4a111d; background: linear-gradient(135deg, #fff0e8, #ffe8dc); border: 1px solid rgba(157, 31, 59, 0.15); }
   }
-  h3 { margin-bottom: 0.35rem; font-size: 1.22rem; }
-  p { color: var(--muted); font-size: 0.9rem; line-height: 1.6; }
 }
+
+/* locum: apply same "featured" look to first 3 ANGULAR project cards only */
+.project-grid .project-card.angular-card:nth-child(-n+3) {
+  background: linear-gradient(145deg, #241f20, #7e1830 58%, #a86d2d);
+  color: #fff1ea;
+
+  h3, .project-link, .project-topline { color: #ffffff; }
+  .project-type, p { color: #ffe3d8; }
+  .tag-list span { color: #4a111d; background: linear-gradient(135deg, #fff0e8, #ffe8dc); border: 1px solid rgba(157, 31, 59, 0.15); }
+}
+
+
+.project-card h3 { margin-bottom: 0.35rem; font-size: 1.22rem; }
+.project-card p { color: var(--muted); font-size: 0.9rem; line-height: 1.6; }
+
 
 .project-topline { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 0.8rem; color: var(--burgundy); font-size: 0.68rem; font-weight: 950; letter-spacing: 0.12em; text-transform: uppercase; strong { color: var(--gold); letter-spacing: 0; text-transform: none; } }
 .project-type { margin-bottom: 0.8rem; font-size: 0.88rem; font-weight: 850; }

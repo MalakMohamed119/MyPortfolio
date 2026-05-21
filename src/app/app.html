@@ -223,7 +223,7 @@
 
     <div class="project-grid">
       @for (project of filteredProjects(); track project.title; let i = $index) {
-        <article class="project-card" [class.featured]="project.featured" data-aos="fade-up" data-aos-duration="600" [attr.data-aos-delay]="(i + 1) * 100">
+        <article class="project-card" [class.featured]="project.featured" [class.angular-card]="project.category === 'Angular'" data-aos="fade-up" data-aos-duration="600" [attr.data-aos-delay]="(i + 1) * 100">
           <div class="project-topline">
             <span>{{ project.category }}</span>
             @if (project.featured) {

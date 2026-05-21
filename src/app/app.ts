@@ -1,8 +1,7 @@
 import { Component, AfterViewInit, computed, signal } from '@angular/core';
 import AOS from 'aos';
 
-// تم توسيع الفئات لتشمل الـ Full-Stack والجانب التعليمي
-type ProjectCategory = 'Angular' | 'JavaScript' | 'UI' | 'Full-Stack' | 'Educational';
+type ProjectCategory = 'Angular' | 'JavaScript' | 'UI' ;
 
 interface Project {
   title: string;
@@ -34,7 +33,7 @@ type Certificate = {
   styleUrl: './app.scss',
 })
 export class App implements AfterViewInit {
-  readonly filters: Array<ProjectCategory | 'All'> = ['All', 'Angular', 'Full-Stack', 'JavaScript', 'UI', 'Educational'];
+  readonly filters: Array<ProjectCategory | 'All'> = ['All', 'Angular', 'JavaScript', 'UI'];
 
   // Certificates modal state
   readonly selectedCertificate = signal<Certificate | null>(null);
@@ -61,7 +60,11 @@ export class App implements AfterViewInit {
   readonly skillGroups: SkillGroup[] = [
     {
       title: 'Frontend Development',
-      skills: ['Angular', 'TypeScript', 'JavaScript ES6+', 'HTML5', 'CSS3', 'SCSS', 'SASS'],
+      skills: [
+        'HTML 5', 'CSS3', 'SASS', 'Bootstrap 5', 'Tailwind 4', 'Web Accessibility', 'JavaScript',
+        'DOM & BOM', 'Async Programming', 'Regular expressions', 'ECMAScript 6+',
+        'TypeScript', 'JQuery', 'SASS', 'Hosting and Domain', 'Git', 'Figma', 'Angular'
+      ],
     },
     {
       title: 'UI & Styling',
@@ -69,7 +72,7 @@ export class App implements AfterViewInit {
     },
     {
       title: 'Engineering & Logic',
-      skills: ['API Integration', 'RxJS', 'Drools', 'Async Programming', 'Git & GitHub'],
+      skills: ['API Integration', 'RxJS', 'Async Programming', 'Git & GitHub'],
     },
     {
       title: 'Programming Basics',
@@ -83,49 +86,34 @@ export class App implements AfterViewInit {
       issuer: 'Information Technology Institute (ITI)',
       year: 'Aug 2025',
       imageSrc: 'Screenshot 2026-05-20 185157.png',
-      skills: ['TypeScript', 'MongoDB', 'Angular']
+      skills: ["Angular",'TypeScript', 'MongoDB']
     },
     {
       title: 'Front-End Development Certificate',
       issuer: 'Route',
       year: 'Sep 2025',
       imageSrc: 'Screenshot 2026-05-20 184836.png',
-      skills: ['JavaScript', 'jQuery', 'TypeScript', 'Tailwind CSS', 'Angular', 'HTML5', 'Bootstrap']
+      skills: [
+        'HTML 5', 'CSS3', 'SASS', 'Bootstrap 5', 'Tailwind 4', 'Web Accessibility', 'JavaScript',
+        'DOM & BOM', 'Async Programming', 'Regular expressions', 'ECMAScript 6+',
+        'TypeScript', 'JQuery', 'SASS', 'Hosting and Domain', 'Git', 'Figma', 'Angular'
+      ]
     },
     {
       title: 'Front-End Web Development(Css-Html-javascript)',
       issuer: 'Minders',
       year: 'Sep 2023',
       imageSrc: 'Screenshot 2026-05-20 185110.jpg',
-      skills: ['JavaScript', 'HTML5', 'CSS']
+      skills: [ 'HTML5', 'CSS','JavaScript']
     },
   ];
 
   readonly projects: Project[] = [
     {
-      title: 'RElief',
-      type: 'Sports Suitability Assessment System',
-      category: 'Full-Stack',
-      description: 'Complex logic-driven system featuring distinct parent and child user flows, powered by a robust decision engine using Drools.',
-      stack: ['ASP.NET Core', 'Angular', 'Drools', 'SQL'],
-      link: '#', // حطي لينك الجيت هب او اللايف هنا
-      featured: true,
-    },
-    {
-      title: 'Front-End Interview Q&A Guide',
-      type: 'Technical Documentation & Community Resource',
-      category: 'Educational',
-      description: 'A comprehensive, focused technical guide created to help front-end developers master JavaScript deep concepts, CSS, and HTML semantics.',
-      stack: ['JavaScript', 'HTML Semantics', 'CSS', 'Knowledge Sharing'],
-      link: '#', // حطي لينك البوست او الدوكيومنت هنا
-      featured: true,
-    },
-    {
       title: 'LoCum',
       type: 'Freelance healthcare staffing platform',
       category: 'Angular',
-      description:
-        'Responsive platform for care homes and nursing facilities to request qualified PSWs through a clean, scalable Angular interface.',
+      description: 'Responsive platform for care homes and nursing facilities to request qualified PSWs through a clean, scalable Angular interface.',
       stack: ['Angular', 'TypeScript', 'SCSS', 'API Integration'],
       link: 'https://lo-cum.vercel.app/',
       featured: true,
@@ -134,8 +122,7 @@ export class App implements AfterViewInit {
       title: 'EvoShop',
       type: 'Route Academy project',
       category: 'Angular',
-      description:
-        'Full e-commerce experience with authentication, cart management, dynamic API data, and payment workflow simulation.',
+      description: 'Full e-commerce experience with authentication, cart management, dynamic API data, and payment workflow simulation.',
       stack: ['Angular', 'TypeScript', 'RxJS', 'Tailwind CSS'],
       link: 'https://e-commerce-five-kappa-11.vercel.app',
     },
@@ -143,35 +130,31 @@ export class App implements AfterViewInit {
       title: 'Movie Night',
       type: 'ITI project',
       category: 'Angular',
-      description:
-        'Movie discovery app integrated with external APIs, asynchronous loading states, and responsive Bootstrap layouts.',
+      description: 'Movie discovery app integrated with external APIs, asynchronous loading states, and responsive Bootstrap layouts.',
       stack: ['Angular', 'TypeScript', 'Bootstrap', 'API Integration'],
       link: 'https://movie-night-seven.vercel.app',
-    },
-    {
-      title: 'Weather App',
-      type: 'Route Academy project',
-      category: 'JavaScript',
-      description:
-        'Interactive weather experience that fetches and renders live weather updates based on location data.',
-      stack: ['JavaScript', 'Bootstrap', 'Async API'],
-      link: 'https://malakmohamed119.github.io/WeatherApp/',
     },
     {
       title: 'Q&A Platform',
       type: 'Route Academy project',
       category: 'JavaScript',
-      description:
-        'Quiz platform with dynamic DOM behavior, real-time score calculation, and instant feedback states.',
+      description: 'Quiz platform with dynamic DOM behavior, real-time score calculation, and instant feedback states.',
       stack: ['JavaScript', 'HTML5', 'CSS3', 'DOM'],
       link: 'https://malakmohamed119.github.io/Q-A-/',
+    },
+    {
+      title: 'Weather App',
+      type: 'Route Academy project',
+      category: 'JavaScript',
+      description: 'Interactive weather experience that fetches and renders live weather updates based on location data.',
+      stack: ['JavaScript', 'Bootstrap', 'Async API'],
+      link: 'https://malakmohamed119.github.io/WeatherApp/',
     },
     {
       title: 'Smart Login System',
       type: 'Route Academy project',
       category: 'JavaScript',
-      description:
-        'Client-side authentication flow using LocalStorage persistence and Regex validation for strict form inputs.',
+      description: 'Client-side authentication flow using LocalStorage persistence and Regex validation for strict form inputs.',
       stack: ['JavaScript', 'LocalStorage', 'Regex'],
       link: 'https://malakmohamed119.github.io/Smart-LOGIN-System/',
     },
@@ -179,8 +162,7 @@ export class App implements AfterViewInit {
       title: 'Bookmark App',
       type: 'Route Academy project',
       category: 'JavaScript',
-      description:
-        'CRUD bookmark manager for saving, validating, indexing, and managing browser links in LocalStorage.',
+      description: 'CRUD bookmark manager for saving, validating, indexing, and managing browser links in LocalStorage.',
       stack: ['JavaScript', 'CRUD', 'Bootstrap'],
       link: 'https://malakmohamed119.github.io/Bookmark/',
     },
@@ -188,8 +170,7 @@ export class App implements AfterViewInit {
       title: 'Trendify',
       type: 'Route Academy project',
       category: 'UI',
-      description:
-        'Responsive e-commerce landing page focused on polished product layout, fluid sections, and Tailwind utilities.',
+      description: 'Responsive e-commerce landing page focused on polished product layout, fluid sections, and Tailwind utilities.',
       stack: ['HTML5', 'Tailwind CSS', 'Responsive Design'],
       link: 'https://malakmohamed119.github.io/TreNdiFy/',
     },
@@ -197,8 +178,7 @@ export class App implements AfterViewInit {
       title: 'Mealify',
       type: 'Route Academy project',
       category: 'UI',
-      description:
-        'Creative restaurant landing page with CSS keyframe motion, responsive grids, and dark mode switching.',
+      description: 'Creative restaurant landing page with CSS keyframe motion, responsive grids, and dark mode switching.',
       stack: ['HTML5', 'CSS3', 'Keyframes', 'Dark Mode'],
       link: 'https://malakmohamed119.github.io/Mealify/',
     },
@@ -206,8 +186,7 @@ export class App implements AfterViewInit {
       title: 'Bakery',
       type: 'Route Academy project',
       category: 'UI',
-      description:
-        'Professional bakery catalogue website structured with Bootstrap responsive layout and grid utilities.',
+      description: 'Professional bakery catalogue website structured with Bootstrap responsive layout and grid utilities.',
       stack: ['HTML5', 'CSS3', 'Bootstrap 5'],
       link: 'https://bakery-roan-seven.vercel.app',
     },
