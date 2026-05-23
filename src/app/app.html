@@ -25,337 +25,22 @@
   >
     <a href="#education" (click)="closeMenu()">Education</a>
     <a href="#skills" (click)="closeMenu()">Skills</a>
-    <a href="#projects" (click)="closeMenu()">Projects</a>
+    <a routerLink="/projects">Projects</a>
     <a href="#experience" (click)="closeMenu()">Experience</a>
     <a href="#contact" (click)="closeMenu()">Contact</a>
   </nav>
 </header>
 
 <main id="home">
-  <!-- <section class="whoami-section section-shell reveal" id="whoami">
-    <div class="section-heading">
-      <p class="eyebrow">Who am I?</p>
-      <h2>About Me</h2>
-    </div>
-    <div class="whoami-content">
-      <p>
-        I am a passionate front-end developer with a strong background in Angular and modern web technologies. I love building clean, maintainable, and interactive user interfaces, and I am always eager to learn and grow in the tech field.
-      </p>
-    </div>
-  </section> -->
-
-  <section class="hero section-shell reveal">
-    <div class="hero-copy">
-      <p class="eyebrow">Angular Front-End Developer</p>
-
-      <h1 class="hero-title">
-        Building <span class="accent-word">reliable</span> Angular experiences —
-        <span class="hero-name">
-          <span class="glow-dot" aria-hidden="true"></span>
-          {{ contact.name }}
-        </span>
-      </h1>
-
-      <p class="intro">
-        I design clean, maintainable UI with strong TypeScript practices, API integration,
-        reusable components, and pixel-focused responsive layouts.
-      </p>
-
-      <div class="hero-meta" aria-label="Core strengths">
-        <span>Angular</span>
-        <span>TypeScript</span>
-        <span>API Integration</span>
-        <span>Responsive UI</span>
-      </div>
-
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#projects" aria-label="View selected projects">
-          <span aria-hidden="true">-></span>
-          View Projects
-        </a>
-        <a
-          class="btn btn-ghost"
-          [href]="gmailComposeUrl"
-          target="_blank"
-          rel="noopener"
-          aria-label="Send email with Gmail"
-        >
-          <span aria-hidden="true">@</span>
-          Get in Touch
-        </a>
-        <a class="btn btn-outline" href="/cv.pdf" download aria-label="Download CV">
-          <span aria-hidden="true">↓</span>
-          Download CV
-        </a>
-      </div>
-
-      <div class="hero-divider" aria-hidden="true"></div>
-
-      <div class="hero-stats" aria-label="Portfolio stats">
-        <div class="stat">
-          <strong>10+</strong>
-          <span>Projects</span>
-        </div>
-        
-        <div class="stat">
-          <strong>Angular</strong>
-          <span>Specialist</span>
-        </div>
-      </div>
-    </div>
-
-    <aside class="profile-panel" aria-label="Profile summary">
-      <div class="avatar-wrap">
-        <img [src]="contact.avatar" [alt]="contact.name" />
-        <span class="avatar-glow" aria-hidden="true"></span>
-      </div>
-
-      <div>
-        <p class="panel-name">{{ contact.name }}</p>
-        <p class="panel-role">{{ contact.role }}</p>
-      </div>
-
-      <div class="availability">
-        <span></span>
-        Available for full-time roles and challenging technical projects
-      </div>
-    </aside>
-  </section>
-
-  <div class="section-divider" aria-hidden="true">
-    <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path
-        d="M0,64 C120,92 240,92 360,64 C480,36 600,36 720,64 C840,92 960,92 1080,64 C1200,36 1320,36 1440,64 L1440,120 L0,120 Z"
-        fill="rgba(157, 31, 59, 0.10)"
-      ></path>
-      <path
-        d="M0,72 C120,98 240,98 360,72 C480,46 600,46 720,72 C840,98 960,98 1080,72 C1200,46 1320,46 1440,72"
-        fill="none"
-        stroke="rgba(191, 138, 61, 0.35)"
-        stroke-width="3"
-        stroke-linecap="round"
-      ></path>
-    </svg>
-  </div>
-
-  <section class="section-shell education-section" id="education" data-aos="fade-right" data-aos-duration="800">
-    <div class="section-heading">
-      <p class="eyebrow">Education</p>
-      <h2>Software engineering background with a strong academic base.</h2>
-    </div>
-
-    <article class="education-card" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
-      <div>
-        <span class="timeline-date">Oct 2022 - Jun 2026</span>
-        <h3>Bachelor of Software Engineering</h3>
-        <p class="muted">
-          Faculty of Computers and Artificial Intelligence, Capital University | Cairo
-        </p>
-        <p>
-          Coursework focused on OOP, data structures, algorithms, software engineering, and
-          practical problem solving.
-        </p>
-      </div>
-
-      <div class="education-meta" aria-label="Academic details">
-        <span>GPA: <strong>3.3 / 4.0</strong></span>
-        <span>Expected graduation: <strong>2026</strong></span>
-      </div>
-    </article>
-  </section>
-
-  <section class="section-shell split-section" id="skills" data-aos="fade-left" data-aos-duration="800">
-    <div class="section-heading">
-      <p class="eyebrow">Technical Toolkit</p>
-      <h2>Front-end stack with strong computer science fundamentals.</h2>
-    </div>
-
-    <div class="skill-grid">
-      @for (group of skillGroups; track group.title; let i = $index) {
-        <article class="skill-card" data-aos="fade-up" data-aos-duration="600" [attr.data-aos-delay]="(i + 1) * 100">
-          <h3>{{ group.title }}</h3>
-          <div class="tag-list" aria-label="Skills list for {{ group.title }}">
-            @for (skill of group.skills; track skill; let j = $index) {
-              <span class="skill-chip" [style.--i]="j + 1">{{ skill }}</span>
-            }
-          </div>
-        </article>
-      }
-    </div>
-  </section>
-
-  <section class="section-shell certificates-section" id="certificates" data-aos="fade-up" data-aos-duration="800">
-    <div class="section-heading">
-      <p class="eyebrow">Certificates</p>
-      <h2>Trusted learning achievements and hands-on milestones.</h2>
-    </div>
-
-    <div class="cert-grid" aria-label="Certificates">
-      @for (cert of certificates; track cert.title; let i = $index) {
-        <article
-          class="cert-card"
-          [style.--i]="i + 1"
-          data-aos="zoom-in"
-          data-aos-duration="600"
-          [attr.data-aos-delay]="(i + 1) * 100"
-          (click)="openCertificate(cert)"
-          role="button"
-          tabindex="0"
-          (keydown.enter)="openCertificate(cert)"
-          (keydown.space)="openCertificate(cert)"
-          [attr.aria-label]="'Open certificate ' + cert.title"
-        >
-          <div class="cert-media" aria-hidden="true">
-            <img [src]="cert.imageSrc" [alt]="cert.title" loading="lazy" />
-            <span class="cert-shine"></span>
-          </div>
-          <div class="cert-meta">
-            <h3>{{ cert.title }}</h3>
-            <p class="cert-issuer">{{ cert.issuer }}</p>
-            <p class="cert-year">{{ cert.year }}</p>
-          </div>
-        </article>
-      }
-    </div>
-  </section>
-
-  <section class="section-shell projects-section" id="projects" data-aos="fade-right" data-aos-duration="800">
-    <div class="section-heading">
-      <p class="eyebrow">Selected Work</p>
-      <h2>Projects that show production habits, API work, and responsive implementation.</h2>
-    </div>
-
-    <div class="filter-bar" aria-label="Project filters">
-      @for (filter of filters; track filter) {
-        <button
-          type="button"
-          [class.active]="activeFilter() === filter"
-          (click)="setFilter(filter)"
-          [attr.aria-pressed]="activeFilter() === filter"
-        >
-          {{ filter }}
-        </button>
-      }
-    </div>
-
-    <div class="project-grid">
-      @for (project of filteredProjects(); track project.title; let i = $index) {
-        <article class="project-card" [class.featured]="project.featured" [class.angular-card]="project.category === 'Angular'" data-aos="fade-up" data-aos-duration="600" [attr.data-aos-delay]="(i + 1) * 100">
-          <div class="project-topline">
-            <span>{{ project.category }}</span>
-            @if (project.featured) {
-              <strong>Featured</strong>
-            }
-          </div>
-          <h3>{{ project.title }}</h3>
-          <p class="project-type">{{ project.type }}</p>
-          <p>{{ project.description }}</p>
-          <div class="tag-list">
-            @for (tech of project.stack; track tech) {
-              <span>{{ tech }}</span>
-            }
-          </div>
-          <a class="project-link" [href]="project.link" target="_blank" rel="noopener">
-            Live Demo
-            <span aria-hidden="true">^</span>
-          </a>
-        </article>
-      }
-    </div>
-  </section>
-
-  <section class="section-shell timeline-section" id="experience" data-aos="fade-left" data-aos-duration="800">
-    <div class="section-heading">
-      <p class="eyebrow">Experience</p>
-      <h2>Teaching, learning, and shipping practical front-end work.</h2>
-    </div>
-
-    <div class="timeline-grid">
-      <article class="timeline-item" data-aos="fade-right" data-aos-duration="600" data-aos-delay="100">
-        <span class="timeline-date">Oct 2024 - Present</span>
-        <h3>Programming Instructor</h3>
-        <p class="muted">3C - Creative Children Community | Cairo, Egypt</p>
-        <p>
-          Teach Scratch, Python, HTML, CSS, and App Inventor through interactive lessons,
-          project-based learning, and personalized student support.
-        </p>
-      </article>
-
-      <article class="timeline-item" data-aos="fade-right" data-aos-duration="600" data-aos-delay="200">
-        <span class="timeline-date">Mar 2025 - Sep 2025</span>
-        <h3>Front-End Web Development</h3>
-        <p class="muted">Route Academy</p>
-        <p>
-          Studied Angular, JavaScript, TypeScript, SASS, Bootstrap, Tailwind, APIs, Git, hosting,
-          and asynchronous architecture.
-        </p>
-      </article>
-    </div>
-  </section>
-
-  <section class="section-shell activities-section" data-aos="fade-up" data-aos-duration="800">
-    <div class="section-heading">
-      <p class="eyebrow">Community</p>
-      <h2>Problem solving and continuous learning beyond coursework.</h2>
-    </div>
-
-    <div class="activity-list">
-      <p><strong>Helwan ICPC Community:</strong> Competitive programming practice using C++.</p>
-      <p><strong>Training Camp - Helwan:</strong> Algorithmic challenges using C.</p>
-      <p><strong>Minders'23 Workshop:</strong> Mentorship workshop in HTML, CSS, and JavaScript.</p>
-    </div>
-  </section>
+  <router-outlet></router-outlet>
 </main>
-
-@if (selectedCertificate(); as cert) {
-  <div class="cert-modal-backdrop" role="dialog" aria-modal="true" (click)="closeCertificateModal()">
-    <div class="pro-modal" (click)="$event.stopPropagation()">
-      
-      <button type="button" class="pro-modal-close" (click)="closeCertificateModal()" aria-label="Close certificate">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
-      </button>
-
-      <div class="pro-modal-content">
-        <p class="pro-eyebrow">Certificate Details</p>
-        <h3 class="pro-title">{{ cert.title }}</h3>
-        
-        <div class="pro-meta">
-          <div class="pro-meta-item">
-            <svg class="pro-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-            <span>{{ cert.issuer }}</span>
-          </div>
-          <div class="pro-meta-item">
-            <svg class="pro-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-            <span>{{ cert.year }}</span>
-          </div>
-        </div>
-
-        <div class="pro-divider" aria-hidden="true"></div>
-
-        @if (cert.skills && cert.skills.length > 0) {
-          <div class="pro-skills">
-            <h4>Skills & Technologies</h4>
-            <div class="pro-tag-list">
-              @for (skill of cert.skills; track skill) {
-                <span class="pro-skill-tag">{{ skill }}</span>
-              }
-            </div>
-          </div>
-        }
-      </div>
-    </div>
-  </div>
-}
 
 <footer class="contact-section reveal" id="contact">
   <div class="section-shell footer-container">
     <div class="footer-cta-row">
       <div class="footer-cta-copy">
         <p class="eyebrow">Contact</p>
-        <h2 class="footer-cta-title">Let’s build something great.</h2>
+        <h2 class="footer-cta-title">Let's build something great.</h2>
       </div>
 
       <a class="btn btn-primary footer-cta-btn" [href]="gmailComposeUrl" target="_blank" rel="noopener">
@@ -376,7 +61,7 @@
         <h3>Navigation</h3>
         <a href="#education" (click)="closeMenu()">Education</a>
         <a href="#skills" (click)="closeMenu()">Skills</a>
-        <a href="#projects" (click)="closeMenu()">Projects</a>
+        <a routerLink="/projects">Projects</a>
         <a href="#experience" (click)="closeMenu()">Experience</a>
       </div>
 
@@ -417,3 +102,4 @@
     </div>
   </div>
 </footer>
+

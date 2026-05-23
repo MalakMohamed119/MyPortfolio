@@ -1,0 +1,61 @@
+<div class="projects-page">
+  <header class="page-header">
+    <a routerLink="/" class="back-link" aria-label="Back to home">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+      Back
+    </a>
+    <div class="header-content">
+      <p class="eyebrow">Selected Work</p>
+      <h1>All Projects</h1>
+      <p class="header-desc">A collection of production-ready projects showcasing Angular expertise, API integration, responsive UI, and clean JavaScript implementations.</p>
+    </div>
+  </header>
+
+  <section class="projects-section">
+    <div class="section-shell">
+      <div class="filter-bar" aria-label="Project filters">
+        @for (filter of filters; track filter) {
+          <button
+            type="button"
+            [class.active]="activeFilter() === filter"
+            (click)="setFilter(filter)"
+            [attr.aria-pressed]="activeFilter() === filter"
+          >
+            {{ filter }}
+          </button>
+        }
+      </div>
+
+      <div class="project-grid">
+        @for (project of filteredProjects(); track project.title; let i = $index) {
+          <article class="project-card" [class.featured]="project.featured" [class.angular-card]="project.category === 'Angular'" data-aos="fade-up" data-aos-duration="600" [attr.data-aos-delay]="(i + 1) * 100">
+            <div class="project-topline">
+              <span>{{ project.category }}</span>
+              @if (project.featured) {
+              }
+            </div>
+            <h3>{{ project.title }}</h3>
+            <p class="project-type">{{ project.type }}</p>
+            <p>{{ project.description }}</p>
+            <div class="tag-list">
+              @for (tech of project.stack; track tech) {
+                <span>{{ tech }}</span>
+              }
+            </div>
+            <a class="project-link" [href]="project.link" target="_blank" rel="noopener">
+              <svg class="project-network-icon" viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" style="vertical-align:middle;margin-right:6px;">
+                <circle cx="10" cy="10" r="8"/>
+                <path d="M5 10a5 5 0 0 1 10 0"/>
+                <circle cx="10" cy="10" r="2" fill="currentColor"/>
+              </svg>
+              Live Demo
+            </a>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+</div>
