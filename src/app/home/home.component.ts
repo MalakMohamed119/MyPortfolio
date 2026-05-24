@@ -1,5 +1,5 @@
-import { Component, AfterViewInit, computed, signal } from '@angular/core';
-import { NavigationEnd, Router, RouterLink } from '@angular/router';
+import { Component, AfterViewInit, HostListener, computed, signal } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import AOS from 'aos';
 
 type ProjectCategory = 'Angular' | 'JavaScript' | 'UI';
@@ -14,14 +14,10 @@ interface Project {
   featured?: boolean;
 }
 
-interface SkillItem {
-  name: string;
-  level: number; // 0-100
-}
-
 interface SkillGroup {
   title: string;
-  skills: SkillItem[];
+  description: string;
+  skills: string[];
 }
 
 type Certificate = {
@@ -47,7 +43,7 @@ export class HomeComponent implements AfterViewInit {
 
   readonly contact = {
     name: 'Malak Mohamed Mostafa',
-    role: 'Software Engineer | Front-End & Angular Developer',
+    role: 'Front-End Developer & Software Engineer',
     location: '15 May City, Helwan, Cairo',
     email: 'malk.mohmed211@gmail.com',
     phone: '01148403342 / 01126746232',
@@ -60,60 +56,53 @@ export class HomeComponent implements AfterViewInit {
     this.contact.email,
   )}`;
 
-  constructor(private readonly router: Router) {}
-
   readonly skillGroups: SkillGroup[] = [
     {
-      title: 'Frontend Development',
+      title: 'Frontend Engineering',
+      description: 'Building scalable interfaces with component architecture and clean stateful flows.',
       skills: [
-        { name: 'HTML 5', level: 90 },
-        { name: 'CSS3', level: 86 },
-        { name: 'SASS', level: 80 },
-        { name: 'Bootstrap 5', level: 82 },
-        { name: 'Tailwind 4', level: 74 },
-        { name: 'Web Accessibility', level: 70 },
-        { name: 'JavaScript', level: 84 },
-        { name: 'DOM & BOM', level: 78 },
-        { name: 'Async Programming', level: 76 },
-        { name: 'Regular expressions', level: 68 },
-        { name: 'ECMAScript 6+', level: 80 },
-        { name: 'TypeScript', level: 82 },
-        { name: 'JQuery', level: 55 },
-        { name: 'Hosting and Domain', level: 62 },
-        { name: 'Git', level: 75 },
-        { name: 'Figma', level: 66 },
-        { name: 'Angular', level: 84 },
-        { name: 'Responsive UI', level: 85 },
+        'Angular',
+        'TypeScript',
+        'JavaScript ES6+',
+        'RxJS',
+        'HTML5',
+        'SCSS',
       ],
     },
     {
-      title: 'UI & Styling',
+      title: 'Product UI',
+      description: 'Translating product intent into responsive, accessible, polished experiences.',
       skills: [
-        { name: 'Bootstrap 5', level: 82 },
-        { name: 'Tailwind CSS', level: 74 },
-        { name: 'Responsive Design', level: 86 },
-        { name: 'Figma', level: 66 },
-        { name: 'Chrome DevTools', level: 72 },
+        'Responsive UI',
+        'Accessibility',
+        'Figma',
+        'Design Systems',
+        'Bootstrap 5',
+        'Tailwind CSS',
       ],
     },
     {
-      title: 'Engineering & Logic',
+      title: 'Engineering Practices',
+      description: 'Shipping maintainable work with strong debugging, API, and deployment habits.',
       skills: [
-        { name: 'API Integration', level: 80 },
-        { name: 'RxJS', level: 68 },
-        { name: 'Async Programming', level: 76 },
-        { name: 'Git & GitHub', level: 78 },
+        'API Integration',
+        'Async Flows',
+        'Git & GitHub',
+        'Clean Components',
+        'Deployment',
+        'Chrome DevTools',
       ],
     },
     {
-      title: 'Programming Basics',
+      title: 'CS Foundation',
+      description: 'Grounded in software engineering fundamentals and structured problem solving.',
       skills: [
-        { name: 'C', level: 64 },
-        { name: 'C++', level: 58 },
-        { name: 'Python', level: 60 },
-        { name: 'OOP', level: 70 },
-        { name: 'Data Structures', level: 66 },
-        { name: 'Algorithms', level: 62 },
+        'OOP',
+        'Data Structures',
+        'Algorithms',
+        'C++',
+        'Python',
+        'Problem Solving',
       ],
     },
   ];
@@ -124,7 +113,7 @@ export class HomeComponent implements AfterViewInit {
       issuer: 'Information Technology Institute (ITI)',
       year: 'Aug 2025',
       imageSrc: 'Screenshot 2026-05-20 185157.png',
-      skills: ["Angular",'TypeScript', 'MongoDB']
+      skills: ['Angular', 'TypeScript', 'MongoDB'],
     },
     {
       title: 'Front-End Development Certificate',
@@ -134,15 +123,15 @@ export class HomeComponent implements AfterViewInit {
       skills: [
         'HTML 5', 'CSS3', 'SASS', 'Bootstrap 5', 'Tailwind 4', 'Web Accessibility', 'JavaScript',
         'DOM & BOM', 'Async Programming', 'Regular expressions', 'ECMAScript 6+',
-        'TypeScript', 'JQuery', 'SASS', 'Hosting and Domain', 'Git', 'Figma', 'Angular'
-      ]
+        'TypeScript', 'JQuery', 'SASS', 'Hosting and Domain', 'Git', 'Figma', 'Angular',
+      ],
     },
     {
-      title: 'Front-End Web Development(Css-Html-javascript)',
+      title: 'Front-End Web Development',
       issuer: 'Minders',
       year: 'Sep 2023',
       imageSrc: 'Screenshot 2026-05-20 185110.jpg',
-      skills: [ 'HTML5', 'CSS','JavaScript']
+      skills: ['HTML5', 'CSS', 'JavaScript'],
     },
   ];
 
@@ -253,36 +242,19 @@ export class HomeComponent implements AfterViewInit {
     this.selectedCertificate.set(null);
   }
 
-  goToProjects(): void {
-    const navigationCompleted = () => {
-      // إزالة أي hash ممكن يعمل jump/scroll
-      if (typeof location !== 'undefined') {
-        location.hash = '';
-      }
-      window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
-    };
-
-    this.router.events.subscribe((evt) => {
-      if (evt instanceof NavigationEnd) {
-        navigationCompleted();
-      }
-    });
-
-    this.router.navigateByUrl('/projects');
-  }
-
   ngAfterViewInit(): void {
     AOS.init({
-      duration: 800,
+      duration: 650,
       easing: 'ease-out-cubic',
       once: true,
-      offset: 100,
+      offset: 80,
     });
+  }
 
-    window.addEventListener('keydown', (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
-        this.closeCertificateModal();
-      }
-    });
+  @HostListener('window:keydown', ['$event'])
+  handleKeydown(event: KeyboardEvent): void {
+    if (event.key === 'Escape') {
+      this.closeCertificateModal();
+    }
   }
 }

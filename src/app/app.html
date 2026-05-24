@@ -1,5 +1,5 @@
 <header class="site-header">
-  <a class="brand" href="#home" aria-label="Go to home">
+  <a class="brand" routerLink="/" aria-label="Go to home" (click)="closeMenu()">
     <img src="mmm-logo.png" alt="" aria-hidden="true" />
     <span class="brand-name">{{ contact.name }}</span>
   </a>
@@ -23,13 +23,27 @@
     [class.open]="isMenuOpen()"
     aria-label="Main navigation"
   >
-    <a href="#education" (click)="closeMenu()">Education</a>
-    <a href="#skills" (click)="closeMenu()">Skills</a>
-    <a routerLink="/projects">Projects</a>
-    <a href="#experience" (click)="closeMenu()">Experience</a>
-    <a href="#contact" (click)="closeMenu()">Contact</a>
+    <a routerLink="/" fragment="about" [class.active]="isNavActive('about')" (click)="closeMenu()">About</a>
+    <a routerLink="/projects" [class.active]="isNavActive('projects')" (click)="closeMenu()">Projects</a>
+    <a routerLink="/" fragment="skills" [class.active]="isNavActive('skills')" (click)="closeMenu()">Skills</a>
+    <a routerLink="/" fragment="experience" [class.active]="isNavActive('experience')" (click)="closeMenu()">Experience</a>
+    <a routerLink="/" fragment="education" [class.active]="isNavActive('education')" (click)="closeMenu()">Education</a>
+    <a routerLink="/" fragment="certificates" [class.active]="isNavActive('certificates')" (click)="closeMenu()">Certificates</a>
+    <a class="nav-cta" routerLink="/" fragment="contact" [class.active]="isNavActive('contact')" (click)="closeMenu()">Contact</a>
   </nav>
 </header>
+
+<a
+  class="whatsapp-float"
+  [href]="whatsappUrl"
+  target="_blank"
+  rel="noopener"
+  aria-label="Contact on WhatsApp"
+>
+  <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+    <path d="M16.02 3.2A12.7 12.7 0 0 0 5.08 22.34L3.7 28.8l6.6-1.33A12.72 12.72 0 1 0 16.02 3.2Zm0 2.34a10.38 10.38 0 0 1 8.74 15.98 10.37 10.37 0 0 1-13.82 3.55l-.38-.22-3.87.78.8-3.76-.25-.39A10.37 10.37 0 0 1 16.02 5.54Zm-4.06 5.64c-.22 0-.58.08-.88.42-.3.34-1.16 1.13-1.16 2.76s1.2 3.2 1.36 3.42c.16.22 2.32 3.72 5.72 5.06 2.83 1.12 3.4.9 4.02.84.62-.06 2-.82 2.28-1.61.28-.79.28-1.47.2-1.61-.08-.14-.3-.22-.62-.38-.32-.16-1.9-.94-2.2-1.04-.3-.1-.52-.16-.74.16-.22.32-.85 1.04-1.04 1.26-.19.22-.38.24-.7.08-.32-.16-1.36-.5-2.58-1.6-.95-.85-1.6-1.9-1.78-2.22-.19-.32-.02-.5.14-.66.14-.14.32-.38.48-.57.16-.19.22-.32.32-.54.1-.22.05-.41-.03-.57-.08-.16-.72-1.78-1.02-2.43-.27-.6-.55-.61-.77-.62Z" />
+  </svg>
+</a>
 
 <main id="home">
   <router-outlet></router-outlet>
@@ -51,20 +65,42 @@
 
     <div class="footer-divider" aria-hidden="true"></div>
 
+    <div class="contact-form-panel">
+      <div class="contact-form-copy">
+        <h3>Send a quick message</h3>
+        <p>Leave your email and message, and it will open as a ready-to-send email.</p>
+      </div>
+
+      <form class="contact-form" (submit)="sendContactMessage($event)">
+        <label>
+          <span>Your email</span>
+          <input
+            type="email"
+            name="senderEmail"
+            [(ngModel)]="contactForm.email"
+            placeholder="you@example.com"
+            required
+          />
+        </label>
+
+        <label>
+          <span>Message</span>
+          <textarea
+            name="message"
+            [(ngModel)]="contactForm.message"
+            rows="4"
+            placeholder="Tell me what you want to build..."
+            required
+          ></textarea>
+        </label>
+
+        <button type="submit" class="btn btn-primary contact-form-btn">Send Message</button>
+      </form>
+    </div>
+
+    <div class="footer-divider" aria-hidden="true"></div>
+
     <div class="footer-columns" aria-label="Footer links">
-      <div class="footer-col">
-        <h3>About</h3>
-        <p class="footer-bio">Angular Front-End Developer based in Cairo, open to full-time roles and freelance work.</p>
-      </div>
-
-      <div class="footer-col">
-        <h3>Navigation</h3>
-        <a href="#education" (click)="closeMenu()">Education</a>
-        <a href="#skills" (click)="closeMenu()">Skills</a>
-        <a routerLink="/projects">Projects</a>
-        <a href="#experience" (click)="closeMenu()">Experience</a>
-      </div>
-
       <div class="footer-col">
         <h3>Contact Info</h3>
         <div class="footer-line">Email: <a [href]="gmailComposeUrl" target="_blank" rel="noopener">{{ contact.email }}</a></div>
@@ -73,7 +109,7 @@
       </div>
 
       <div class="footer-col">
-        <h3>Social Links</h3>
+        <h3>Social</h3>
         <a class="social-pill" [href]="contact.linkedin" target="_blank" rel="noopener" aria-label="LinkedIn">
           <span class="icon-wrap">
             <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -94,12 +130,16 @@
           <span>GitHub</span>
         </a>
       </div>
+
+      <div class="footer-col footer-note">
+        <h3>Focus</h3>
+        <p class="footer-bio">Angular frontend work, responsive product UI, API integration, and polished delivery.</p>
+      </div>
     </div>
 
     <div class="footer-bottom" aria-label="Footer bottom">
-      <span>© 2026 Malak Mohamed Mostafa</span>
+      <span>(c) 2026 Malak Mohamed Mostafa</span>
       <span class="footer-built">Built with Angular</span>
     </div>
   </div>
 </footer>
-

@@ -1,5 +1,5 @@
-import { Component, AfterViewInit, computed, signal } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
+import { Component, OnInit, computed, signal } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import AOS from 'aos';
 
 type ProjectCategory = 'Angular' | 'JavaScript' | 'UI';
@@ -20,7 +20,7 @@ interface Project {
   templateUrl: './projects.html',
   styleUrl: './projects.scss',
 })
-export class ProjectsComponent implements AfterViewInit {
+export class ProjectsComponent implements OnInit {
   readonly filters: Array<ProjectCategory | 'All'> = ['All', 'Angular', 'JavaScript', 'UI'];
 
   readonly activeFilter = signal<ProjectCategory | 'All'>('All');
@@ -116,24 +116,21 @@ export class ProjectsComponent implements AfterViewInit {
       : this.projects.filter((project) => project.category === filter);
   });
 
-  constructor(private readonly router: Router) {}
-
   setFilter(filter: ProjectCategory | 'All'): void {
     this.activeFilter.set(filter);
   }
 
-  ngAfterViewInit(): void {
-    // ضمان إن /projects يبدأ من أول الصفحة حتى لو كان فيه restoration/hash
+  ngOnInit(): void {
     queueMicrotask(() => {
       window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
       if (typeof location !== 'undefined') location.hash = '';
     });
 
     AOS.init({
-      duration: 800,
+      duration: 650,
       easing: 'ease-out-cubic',
       once: true,
-      offset: 100,
+      offset: 80,
     });
   }
 }
