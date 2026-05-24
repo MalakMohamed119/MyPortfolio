@@ -1329,12 +1329,12 @@ p {
 :host-context(.dark-theme) {
   --ink: #fff4ec;
   --charcoal: #fff8f2;
-  --berry: #ff6f91;
-  --berry-dark: #ffb0c2;
+  --berry: #db426d;
+  --berry-dark: #f08aa5;
   --rose: #ff8da6;
   --teal: #2dd4bf;
   --mint: rgba(45, 212, 191, 0.14);
-  --gold: #f1bd66;
+  --gold: #c55d82;
   --paper: #171116;
   --cream: #1e151a;
   --smoke: #211a1e;
@@ -1417,7 +1417,14 @@ p {
   .btn-outline,
   .section-link,
   .hero-socials a {
-    color: #fff0e8;
+    color: #f3ded6;
+    border-color: rgba(255, 248, 242, 0.11);
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #7e1833, #4d1021);
+    box-shadow: 0 1rem 2.2rem rgba(0, 0, 0, 0.32);
   }
 
   .btn-ghost:hover,
@@ -1429,7 +1436,7 @@ p {
   .project-card:hover {
     color: #9ff5e8;
     border-color: rgba(45, 212, 191, 0.28);
-    background: rgba(255, 255, 255, 0.095);
+    background: rgba(255, 255, 255, 0.075);
   }
 
   .hero-summary span,
@@ -1504,7 +1511,7 @@ p {
   .cert-media,
   .pro-cert-media {
     background:
-      linear-gradient(135deg, rgba(255, 111, 145, 0.08), rgba(45, 212, 191, 0.07)),
+      linear-gradient(135deg, rgba(219, 66, 109, 0.09), rgba(45, 212, 191, 0.07)),
       rgba(255, 255, 255, 0.04);
   }
 

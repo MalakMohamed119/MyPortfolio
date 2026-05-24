@@ -349,9 +349,9 @@ p {
 :host-context(.dark-theme) {
   --ink: #fff4ec;
   --charcoal: #fff8f2;
-  --burgundy: #ff6f91;
-  --burgundy-dark: #ffb0c2;
-  --gold: #f1bd66;
+  --burgundy: #db426d;
+  --burgundy-dark: #f08aa5;
+  --gold: #c55d82;
   --paper: #171116;
   --muted: #d2c0b8;
   --line: rgba(255, 248, 242, 0.13);
@@ -389,9 +389,9 @@ p {
   .filter-bar button,
   .header-signals span,
   .tag-list span {
-    color: #f4e1d8;
+    color: #ecd6ce;
     border-color: rgba(255, 248, 242, 0.13);
-    background: rgba(255, 255, 255, 0.07);
+    background: rgba(255, 255, 255, 0.05);
     box-shadow: var(--shadow-sm);
   }
 
@@ -404,8 +404,8 @@ p {
 
   .filter-bar button.active {
     color: #fff8f2;
-    border-color: rgba(255, 111, 145, 0.72);
-    background: linear-gradient(135deg, #a91d43, #5a1228);
+    border-color: rgba(219, 66, 109, 0.7);
+    background: linear-gradient(135deg, #7e1833, #4d1021);
     box-shadow: 0 0.65rem 1.35rem rgba(0, 0, 0, 0.28);
   }
 
