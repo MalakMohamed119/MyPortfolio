@@ -195,7 +195,7 @@ export class HomeComponent implements AfterViewInit {
     },
     {
       title: 'Trendify',
-      type: 'Route Academy course project',
+      type: 'E-commerce landing page',
       category: 'UI',
       description: 'Responsive e-commerce landing page focused on polished product layout, fluid sections, and Tailwind utilities.',
       stack: ['HTML5', 'Tailwind CSS', 'Responsive Design'],
@@ -203,7 +203,7 @@ export class HomeComponent implements AfterViewInit {
     },
     {
       title: 'Mealify',
-      type: 'Route Academy course project',
+      type: 'Restaurant landing page',
       category: 'UI',
       description: 'Creative restaurant landing page with CSS keyframe motion, responsive grids, and dark mode switching.',
       stack: ['HTML5', 'CSS3', 'Keyframes', 'Dark Mode'],
@@ -211,9 +211,9 @@ export class HomeComponent implements AfterViewInit {
     },
     {
       title: 'Bakery',
-      type: 'Route Academy course project',
+      type: 'Bakery landing page',
       category: 'UI',
-      description: 'Professional bakery catalogue website structured with Bootstrap responsive layout and grid utilities.',
+      description: 'Professional bakery landing page structured with Bootstrap responsive layout and grid utilities.',
       stack: ['HTML5', 'CSS3', 'Bootstrap 5'],
       link: 'https://bakery-roan-seven.vercel.app',
     },
