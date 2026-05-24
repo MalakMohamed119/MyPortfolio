@@ -15,9 +15,9 @@ export class App implements AfterViewInit, OnDestroy {
 
   private readonly sectionIds = [
     'about',
-    'projects',
-    'skills',
     'education',
+    'skills',
+    'projects',
     'experience',
     'certificates',
     'contact',

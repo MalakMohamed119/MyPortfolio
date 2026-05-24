@@ -24,10 +24,10 @@
     aria-label="Main navigation"
   >
     <a routerLink="/" fragment="about" [class.active]="isNavActive('about')" (click)="closeMenu()">About</a>
-    <a routerLink="/projects" [class.active]="isNavActive('projects')" (click)="closeMenu()">Projects</a>
-    <a routerLink="/" fragment="skills" [class.active]="isNavActive('skills')" (click)="closeMenu()">Skills</a>
     <a routerLink="/" fragment="education" [class.active]="isNavActive('education')" (click)="closeMenu()">Education</a>
     <a routerLink="/" fragment="experience" [class.active]="isNavActive('experience')" (click)="closeMenu()">Experience</a>
+    <a routerLink="/projects" [class.active]="isNavActive('projects')" (click)="closeMenu()">Projects</a>
+    <a routerLink="/" fragment="skills" [class.active]="isNavActive('skills')" (click)="closeMenu()">Skills</a>
     <a routerLink="/" fragment="certificates" [class.active]="isNavActive('certificates')" (click)="closeMenu()">Certificates</a>
     <a class="nav-cta" routerLink="/" fragment="contact" [class.active]="isNavActive('contact')" (click)="closeMenu()">Contact</a>
   </nav>
