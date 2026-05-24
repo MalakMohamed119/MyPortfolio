@@ -882,6 +882,81 @@ p {
   }
 }
 
+.single-experience-card {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(13rem, 0.34fr);
+  gap: 1.4rem;
+  align-items: center;
+  padding: 1.35rem;
+  background:
+    linear-gradient(135deg, rgba(15, 118, 110, 0.09), transparent 36%),
+    rgba(255, 252, 247, 0.9);
+
+  &::before {
+    top: 1.35rem;
+    left: 0;
+    width: 4px;
+    height: calc(100% - 2.7rem);
+    border: 0;
+    border-radius: 999px;
+    background: var(--teal);
+    box-shadow: none;
+  }
+
+  .timeline-date {
+    padding-left: 0;
+  }
+}
+
+.training-experience-card {
+  min-height: 13rem;
+
+  &::before {
+    top: 1.05rem;
+    left: 0;
+    width: 3px;
+    height: calc(100% - 2.1rem);
+    border: 0;
+    border-radius: 999px;
+    background: var(--gold);
+    box-shadow: none;
+  }
+}
+
+.experience-type {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.55rem;
+  margin: 0 0 0.65rem;
+  padding: 0 0.55rem;
+  border: 1px solid rgba(15, 118, 110, 0.16);
+  border-radius: 0.35rem;
+  background: var(--mint);
+  color: var(--teal);
+  font-size: 0.68rem;
+  font-weight: 950;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.experience-summary {
+  display: grid;
+  gap: 0.55rem;
+  padding: 0.85rem;
+  border: 1px solid rgba(157, 31, 59, 0.14);
+  border-radius: 0.7rem;
+  background: rgba(255, 244, 235, 0.62);
+
+  span {
+    display: block;
+    color: var(--charcoal);
+    font-size: 0.82rem;
+    font-weight: 900;
+    line-height: 1.35;
+  }
+}
+
 .timeline-date {
   display: inline-block;
   padding-left: 1.25rem;
@@ -900,7 +975,7 @@ p {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(13rem, auto);
   gap: 1.4rem;
-  align-items: center;
+  align-items: start;
   padding: 1.25rem;
   border: 1px solid var(--line);
   border-radius: 0.9rem;
@@ -916,6 +991,27 @@ p {
 
   p:last-child {
     margin-bottom: 0;
+  }
+}
+
+.education-coursework {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.85rem;
+
+  span {
+    display: inline-flex;
+    align-items: center;
+    min-height: 1.85rem;
+    padding: 0.35rem 0.62rem;
+    border: 1px solid rgba(15, 118, 110, 0.18);
+    border-radius: 999px;
+    background: rgba(223, 248, 238, 0.52);
+    color: var(--charcoal);
+    font-size: 0.78rem;
+    font-weight: 850;
+    line-height: 1.2;
   }
 }
 
@@ -1011,41 +1107,71 @@ p {
 
 .activity-list {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
 
-  p {
-    position: relative;
-    margin: 0;
-    padding: 0.95rem 1rem 0.95rem 1.2rem;
-    border: 1px solid var(--line);
-    border-radius: 0.9rem;
-    background: rgba(255, 252, 247, 0.82);
-    box-shadow: var(--shadow-sm);
-    font-size: 0.9rem;
-    line-height: 1.65;
-    transition:
-      transform 180ms ease,
-      box-shadow 180ms ease;
-  }
+.activity-card {
+  position: relative;
+  display: grid;
+  align-content: start;
+  gap: 0.65rem;
+  min-height: 10.5rem;
+  padding: 1rem 1.05rem 1rem 1.15rem;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 0.7rem;
+  background: rgba(255, 252, 247, 0.88);
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease;
 
-  p::before {
+  &::before {
     content: '';
     position: absolute;
-    top: 1.15rem;
+    top: 0.95rem;
     left: 0;
-    width: 4px;
-    height: 2.2rem;
+    width: 3px;
+    height: calc(100% - 1.9rem);
     border-radius: 999px;
     background: var(--teal);
   }
 
-  p:hover {
+  &:hover {
     transform: translateY(-5px);
+    border-color: rgba(15, 118, 110, 0.22);
     box-shadow: var(--shadow-md);
   }
 
-  strong {
+  h3 {
+    margin: 0;
     color: var(--charcoal);
+    font-size: 0.98rem;
+    line-height: 1.32;
   }
+
+  p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+}
+
+.activity-type {
+  display: inline-flex;
+  align-items: center;
+  justify-self: start;
+  min-height: 1.55rem;
+  padding: 0 0.55rem;
+  border: 1px solid rgba(15, 118, 110, 0.16);
+  border-radius: 0.35rem;
+  background: var(--mint);
+  color: var(--teal);
+  font-size: 0.68rem;
+  font-weight: 950;
+  line-height: 1;
+  text-transform: uppercase;
 }
 
 .cert-modal-backdrop {
@@ -1235,6 +1361,10 @@ p {
     gap: 2rem;
   }
 
+  .activity-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .project-card {
     grid-template-columns: 3rem minmax(0, 1fr);
   }
@@ -1264,10 +1394,19 @@ p {
   .about-layout,
   .section-heading-row,
   .education-card,
+  .single-experience-card,
   .timeline-grid,
   .cert-grid,
   .activity-list {
     grid-template-columns: 1fr;
+  }
+
+  .activity-card {
+    min-height: auto;
+  }
+
+  .single-experience-card {
+    grid-column: auto;
   }
 
   .section-heading-row {

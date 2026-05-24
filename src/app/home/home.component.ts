@@ -147,7 +147,7 @@ export class HomeComponent implements AfterViewInit {
     },
     {
       title: 'EvoShop',
-      type: 'Route Academy project',
+      type: 'Route Academy course project',
       category: 'Angular',
       description: 'Full e-commerce experience with authentication, cart management, dynamic API data, and payment workflow simulation.',
       stack: ['Angular', 'TypeScript', 'RxJS', 'Tailwind CSS'],
@@ -171,7 +171,7 @@ export class HomeComponent implements AfterViewInit {
     },
     {
       title: 'Weather App',
-      type: 'Route Academy project',
+      type: 'Route Academy course project',
       category: 'JavaScript',
       description: 'Interactive weather experience that fetches and renders live weather updates based on location data.',
       stack: ['JavaScript', 'Bootstrap', 'Async API'],
@@ -179,7 +179,7 @@ export class HomeComponent implements AfterViewInit {
     },
     {
       title: 'Smart Login System',
-      type: 'Route Academy project',
+      type: 'Route Academy course project',
       category: 'JavaScript',
       description: 'Client-side authentication flow using LocalStorage persistence and Regex validation for strict form inputs.',
       stack: ['JavaScript', 'LocalStorage', 'Regex'],
@@ -187,7 +187,7 @@ export class HomeComponent implements AfterViewInit {
     },
     {
       title: 'Bookmark App',
-      type: 'Route Academy project',
+      type: 'Route Academy course project',
       category: 'JavaScript',
       description: 'CRUD bookmark manager for saving, validating, indexing, and managing browser links in LocalStorage.',
       stack: ['JavaScript', 'CRUD', 'Bootstrap'],
@@ -195,7 +195,7 @@ export class HomeComponent implements AfterViewInit {
     },
     {
       title: 'Trendify',
-      type: 'Route Academy project',
+      type: 'Route Academy course project',
       category: 'UI',
       description: 'Responsive e-commerce landing page focused on polished product layout, fluid sections, and Tailwind utilities.',
       stack: ['HTML5', 'Tailwind CSS', 'Responsive Design'],
@@ -203,7 +203,7 @@ export class HomeComponent implements AfterViewInit {
     },
     {
       title: 'Mealify',
-      type: 'Route Academy project',
+      type: 'Route Academy course project',
       category: 'UI',
       description: 'Creative restaurant landing page with CSS keyframe motion, responsive grids, and dark mode switching.',
       stack: ['HTML5', 'CSS3', 'Keyframes', 'Dark Mode'],
@@ -211,7 +211,7 @@ export class HomeComponent implements AfterViewInit {
     },
     {
       title: 'Bakery',
-      type: 'Route Academy project',
+      type: 'Route Academy course project',
       category: 'UI',
       description: 'Professional bakery catalogue website structured with Bootstrap responsive layout and grid utilities.',
       stack: ['HTML5', 'CSS3', 'Bootstrap 5'],

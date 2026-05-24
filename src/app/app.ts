@@ -16,10 +16,11 @@ export class App implements AfterViewInit, OnDestroy {
   private readonly sectionIds = [
     'about',
     'education',
-    'skills',
-    'projects',
     'experience',
+    'projects',
+    'skills',
     'certificates',
+    'community',
     'contact',
   ];
   private routerSubscription?: Subscription;
