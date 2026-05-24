@@ -198,22 +198,26 @@ p {
 .project-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 0;
-  border-top: 1px solid rgba(157, 31, 59, 0.14);
+  gap: 1.1rem;
   counter-reset: project;
 }
 
 .project-card {
   counter-increment: project;
   display: grid;
-  grid-template-columns: 3.5rem minmax(0, 1fr) minmax(14rem, 0.46fr);
-  gap: 1.5rem;
+  grid-template-columns: 3.75rem minmax(0, 1fr) minmax(15rem, 0.48fr);
+  gap: 1.75rem;
   align-items: start;
-  padding: 1.35rem 0;
-  border-bottom: 1px solid rgba(157, 31, 59, 0.14);
+  padding: 1.55rem;
+  border: 1px solid rgba(157, 31, 59, 0.14);
+  border-radius: 0.9rem;
+  background: rgba(255, 252, 248, 0.74);
+  box-shadow: var(--shadow-sm);
   transition:
     background 180ms ease,
-    border-color 180ms ease;
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
 }
 
 .project-card::before {
@@ -222,7 +226,9 @@ p {
 
 .project-card:hover {
   border-color: rgba(157, 31, 59, 0.22);
-  background: rgba(255, 252, 248, 0.62);
+  background: rgba(255, 252, 248, 0.94);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
 }
 
 .project-card.featured {
@@ -235,6 +241,7 @@ p {
   font-size: 1.35rem;
   font-weight: 900;
   line-height: 1;
+  padding-top: 0.12rem;
 }
 
 .project-index::before {
@@ -273,6 +280,7 @@ p {
 
 .project-card p:not(.project-type) {
   max-width: 42rem;
+  margin-bottom: 0;
   font-size: 0.9rem;
   line-height: 1.65;
 }
@@ -338,9 +346,112 @@ p {
   font-weight: 900;
 }
 
+:host-context(.dark-theme) {
+  --ink: #fff4ec;
+  --charcoal: #fff8f2;
+  --burgundy: #ff6f91;
+  --burgundy-dark: #ffb0c2;
+  --gold: #f1bd66;
+  --paper: #171116;
+  --muted: #d2c0b8;
+  --line: rgba(255, 248, 242, 0.13);
+  --shadow-sm: 0 0.75rem 1.35rem rgba(0, 0, 0, 0.28);
+  --shadow-md: 0 1rem 2.6rem rgba(0, 0, 0, 0.36);
+
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 12% 8%, rgba(45, 212, 191, 0.13), transparent 23rem),
+    radial-gradient(circle at 86% 0%, rgba(255, 111, 145, 0.13), transparent 23rem),
+    linear-gradient(180deg, #100c10 0%, #171116 48%, #0f0d10 100%);
+}
+
+:host-context(.dark-theme) {
+  h1,
+  h2,
+  h3 {
+    color: var(--charcoal);
+  }
+
+  p,
+  .header-desc,
+  .project-type {
+    color: var(--muted);
+  }
+
+  .page-header {
+    border-bottom-color: rgba(255, 248, 242, 0.1);
+    background:
+      linear-gradient(135deg, rgba(45, 212, 191, 0.08), transparent 38%),
+      rgba(255, 255, 255, 0.045);
+  }
+
+  .back-link,
+  .filter-bar button,
+  .header-signals span,
+  .tag-list span {
+    color: #f4e1d8;
+    border-color: rgba(255, 248, 242, 0.13);
+    background: rgba(255, 255, 255, 0.07);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .back-link:hover,
+  .filter-bar button:hover {
+    color: #9ff5e8;
+    border-color: rgba(45, 212, 191, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .filter-bar button.active {
+    color: #fff8f2;
+    border-color: rgba(255, 111, 145, 0.72);
+    background: linear-gradient(135deg, #a91d43, #5a1228);
+    box-shadow: 0 0.65rem 1.35rem rgba(0, 0, 0, 0.28);
+  }
+
+  .project-grid,
+  .project-card {
+    border-color: rgba(255, 248, 242, 0.12);
+  }
+
+  .project-card {
+    background: rgba(255, 255, 255, 0.065);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .project-card:hover {
+    border-color: rgba(255, 111, 145, 0.28);
+    background: rgba(255, 255, 255, 0.095);
+    box-shadow: var(--shadow-md);
+  }
+
+  .project-index {
+    color: rgba(255, 111, 145, 0.68);
+  }
+
+  .project-topline,
+  .tools-label,
+  .eyebrow {
+    color: var(--burgundy);
+  }
+
+  .project-link {
+    color: var(--burgundy-dark);
+  }
+
+  .project-link:hover {
+    color: #9ff5e8;
+  }
+
+  .tag-list span {
+    color: #ffe7dd;
+  }
+}
+
 @media (max-width: 980px) {
   .project-card {
     grid-template-columns: 2.75rem minmax(0, 1fr);
+    gap: 1.2rem;
   }
 
   .project-meta {
@@ -372,7 +483,8 @@ p {
 
   .project-card {
     grid-template-columns: 1fr;
-    gap: 0.75rem;
+    gap: 0.95rem;
+    padding: 1.15rem;
   }
 
   .project-meta {

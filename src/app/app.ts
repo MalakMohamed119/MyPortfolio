@@ -12,6 +12,7 @@ import { filter, Subscription } from 'rxjs';
 export class App implements AfterViewInit, OnDestroy {
   readonly isMenuOpen = signal(false);
   readonly activeNav = signal('about');
+  readonly isDarkMode = signal(false);
 
   private readonly sectionIds = [
     'about',
@@ -23,6 +24,7 @@ export class App implements AfterViewInit, OnDestroy {
     'community',
     'contact',
   ];
+  private readonly themeStorageKey = 'portfolio-theme';
   private routerSubscription?: Subscription;
   private scrollFrame = 0;
 
@@ -46,7 +48,9 @@ export class App implements AfterViewInit, OnDestroy {
     message: '',
   };
 
-  constructor(private readonly router: Router) {}
+  constructor(private readonly router: Router) {
+    this.initializeTheme();
+  }
 
   ngAfterViewInit(): void {
     this.routerSubscription = this.router.events
@@ -77,6 +81,10 @@ export class App implements AfterViewInit, OnDestroy {
 
   closeMenu(): void {
     this.isMenuOpen.set(false);
+  }
+
+  toggleTheme(): void {
+    this.applyTheme(!this.isDarkMode(), true);
   }
 
   sendContactMessage(event: Event): void {
@@ -138,5 +146,28 @@ export class App implements AfterViewInit, OnDestroy {
     }
 
     this.activeNav.set(currentPath.startsWith('/projects') ? 'projects' : 'about');
+  }
+
+  private initializeTheme(): void {
+    if (typeof window === 'undefined' || typeof document === 'undefined') {
+      return;
+    }
+
+    const savedTheme = window.localStorage.getItem(this.themeStorageKey);
+    this.applyTheme(savedTheme === 'dark', false);
+  }
+
+  private applyTheme(isDark: boolean, shouldPersist: boolean): void {
+    this.isDarkMode.set(isDark);
+
+    if (typeof document !== 'undefined') {
+      document.documentElement.classList.toggle('dark-theme', isDark);
+      document.body.classList.toggle('dark-theme', isDark);
+      document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';
+    }
+
+    if (shouldPersist && typeof window !== 'undefined') {
+      window.localStorage.setItem(this.themeStorageKey, isDark ? 'dark' : 'light');
+    }
   }
 }

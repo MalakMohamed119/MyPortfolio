@@ -15,6 +15,11 @@ body {
   font-family:
     Manrope, Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background: #f7f4ed;
+  transition: background 220ms ease, color 220ms ease;
+}
+
+html.dark-theme body {
+  background: #100c10;
 }
 
 button,
