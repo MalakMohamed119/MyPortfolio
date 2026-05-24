@@ -80,10 +80,10 @@ h2 {
 }
 
 h1 {
-  max-width: 17ch;
+  max-width: 19ch;
   margin-bottom: 0.95rem;
-  font-size: clamp(2.05rem, 4vw, 3.55rem);
-  line-height: 1.08;
+  font-size: clamp(1.75rem, 3.25vw, 2.85rem);
+  line-height: 1.12;
 }
 
 h2 {
@@ -116,12 +116,13 @@ p {
 }
 
 .hero {
+  position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 0.95fr) minmax(17rem, 20rem);
-  gap: clamp(1.8rem, 4vw, 3rem);
+  grid-template-columns: minmax(0, 1fr) minmax(15rem, 18rem);
+  gap: clamp(1.7rem, 4vw, 3.3rem);
   align-items: center;
   min-height: auto;
-  padding: 3.45rem 0 3rem;
+  padding: 3.6rem 0 3.2rem;
 }
 
 .hero-copy {
@@ -326,91 +327,48 @@ p {
 .profile-panel {
   position: relative;
   display: grid;
-  gap: 0.65rem;
+  gap: 0.85rem;
   justify-self: end;
-  width: min(100%, 20rem);
+  width: min(100%, 18rem);
 }
 
-.code-window {
-  display: none;
+.portrait-shell {
   position: relative;
-  top: auto;
-  right: auto;
-  z-index: 2;
-  justify-self: end;
-  width: min(20rem, 100%);
-  padding: 0.8rem;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 0.75rem;
-  color: #f9e9df;
-  background: rgba(33, 27, 32, 0.92);
-  box-shadow: var(--shadow-strong);
-  animation: floatPanel 5.5s ease-in-out infinite;
-
-  pre {
-    margin: 0;
-    overflow: hidden;
-    font-size: 0.7rem;
-    line-height: 1.6;
-    white-space: pre-wrap;
-  }
-
-  code {
-    font-family: "Cascadia Code", Consolas, monospace;
-  }
-}
-
-.window-dots {
-  display: flex;
-  gap: 0.35rem;
-  margin-bottom: 0.7rem;
-
-  span {
-    width: 0.5rem;
-    height: 0.5rem;
-    border-radius: 50%;
-    background: #d84f68;
-  }
-
-  span:nth-child(2) {
-    background: #e0a03f;
-  }
-
-  span:nth-child(3) {
-    background: #19a889;
-  }
+  isolation: isolate;
 }
 
 .portrait-frame {
   position: relative;
-  padding: 0.55rem;
+  padding: 0.65rem;
   overflow: hidden;
-  border: 1px solid rgba(33, 27, 32, 0.14);
-  border-radius: 1.05rem;
+  border: 1px solid rgba(157, 31, 59, 0.18);
+  border-radius: 1.35rem;
   background:
-    linear-gradient(135deg, rgba(255, 252, 247, 0.96), rgba(255, 244, 235, 0.86)),
-    linear-gradient(135deg, rgba(157, 31, 59, 0.1), rgba(15, 118, 110, 0.1));
-  box-shadow: 0 1.1rem 2.8rem rgba(71, 18, 32, 0.16);
-  transform: none;
+    linear-gradient(150deg, rgba(33, 27, 32, 0.96), rgba(99, 18, 37, 0.9) 56%, rgba(15, 118, 110, 0.82)),
+    var(--charcoal);
+  box-shadow:
+    0 1.4rem 3.2rem rgba(71, 18, 32, 0.2),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.14);
+  transform: rotate(1.2deg);
 
   &::before {
     content: '';
     position: absolute;
-    inset: 0.55rem;
-    z-index: 1;
-    border: 1px solid rgba(255, 255, 255, 0.52);
-    border-radius: 0.8rem;
+    inset: 0.65rem;
+    z-index: 2;
+    border: 1px solid rgba(255, 255, 255, 0.42);
+    border-radius: 1rem;
     pointer-events: none;
   }
 
   &::after {
     content: '';
     position: absolute;
-    inset: auto -20% -18% 14%;
-    height: 42%;
-    border-radius: 50%;
-    background: rgba(15, 118, 110, 0.18);
-    filter: blur(1.2rem);
+    inset: auto 0 0;
+    z-index: 1;
+    height: 35%;
+    background: linear-gradient(180deg, transparent, rgba(33, 27, 32, 0.45));
+    pointer-events: none;
   }
 
   img {
@@ -418,41 +376,65 @@ p {
     z-index: 0;
     display: block;
     width: 100%;
-    aspect-ratio: 1 / 1.12;
-    border-radius: 0.78rem;
+    aspect-ratio: 4 / 5;
+    border-radius: 1rem;
     object-fit: cover;
-    object-position: 50% 28%;
-    filter: saturate(1.06) contrast(1.03);
-    transform: none;
+    object-position: 50% 35%;
+    filter: saturate(1.08) contrast(1.04) brightness(1.04);
+    transform: rotate(-1.2deg) scale(1.015);
   }
 }
 
-.orbit-label {
-  display: none;
+.portrait-badge {
   position: absolute;
-  z-index: 3;
+  z-index: 4;
   display: inline-flex;
   align-items: center;
-  min-height: 2rem;
-  padding: 0 0.7rem;
-  border: 1px solid rgba(255, 255, 255, 0.28);
+  min-height: 2.35rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 999px;
-  color: #fffaf6;
-  background: rgba(99, 18, 37, 0.86);
-  font-size: 0.72rem;
+  color: #fff8f2;
+  background: rgba(33, 27, 32, 0.76);
+  box-shadow: 0 0.85rem 1.8rem rgba(33, 27, 32, 0.18);
+  backdrop-filter: blur(14px);
+  font-size: 0.76rem;
   font-weight: 950;
-  box-shadow: 0 0.9rem 1.8rem rgba(99, 18, 37, 0.2);
 }
 
-.orbit-label.angular {
-  right: 0.9rem;
-  bottom: 3.7rem;
+.portrait-badge-top {
+  top: 1.15rem;
+  left: -0.9rem;
+  gap: 0.45rem;
+  padding: 0 0.8rem;
+
+  span {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: #20bd8f;
+    box-shadow: 0 0 0 0 rgba(32, 189, 143, 0.55);
+    animation: pulseDot 1.9s ease-out infinite;
+  }
 }
 
-.orbit-label.ui {
-  left: 0.75rem;
-  top: 7.2rem;
-  background: rgba(15, 118, 110, 0.86);
+.portrait-badge-bottom {
+  right: -0.65rem;
+  bottom: 1.15rem;
+  gap: 0.42rem;
+  padding: 0 0.75rem 0 0.55rem;
+  background: rgba(255, 252, 247, 0.9);
+  color: #4d3438;
+
+  strong {
+    display: grid;
+    place-items: center;
+    min-width: 2rem;
+    min-height: 2rem;
+    border-radius: 50%;
+    color: #fff8f2;
+    background: linear-gradient(135deg, var(--berry), var(--teal));
+    font-size: 0.78rem;
+  }
 }
 
 .portrait-card {
@@ -460,7 +442,7 @@ p {
   z-index: 4;
   display: grid;
   gap: 0.18rem;
-  margin: -0.7rem 0.8rem 0;
+  margin: -0.55rem 1rem 0;
   padding: 0.82rem 0.9rem;
   border: 1px solid rgba(33, 27, 32, 0.12);
   border-radius: 0.85rem;
@@ -1249,7 +1231,7 @@ p {
 
 @media (max-width: 1080px) {
   .hero {
-    grid-template-columns: minmax(0, 1fr) minmax(15rem, 18rem);
+    grid-template-columns: minmax(0, 1fr) minmax(14.5rem, 16.5rem);
     gap: 2rem;
   }
 
@@ -1275,12 +1257,8 @@ p {
 
   .profile-panel {
     justify-self: center;
-    width: min(100%, 21rem);
+    width: min(100%, 17rem);
     margin-top: 1.1rem;
-  }
-
-  .code-window {
-    justify-self: center;
   }
 
   .about-layout,
@@ -1376,17 +1354,24 @@ p {
   }
 
   .profile-panel {
-    width: min(100%, 18.5rem);
+    width: min(100%, 15.75rem);
   }
 
-  .code-window {
-    top: auto;
-    right: auto;
-    width: 100%;
+  .portrait-frame {
+    border-radius: 1.1rem;
+    transform: none;
+
+    img {
+      transform: none;
+    }
   }
 
-  .orbit-label.ui {
-    top: 6rem;
+  .portrait-badge-top {
+    left: 0.75rem;
+  }
+
+  .portrait-badge-bottom {
+    right: 0.65rem;
   }
 
   .pro-modal-content {

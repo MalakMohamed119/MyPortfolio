@@ -17,8 +17,8 @@ export class App implements AfterViewInit, OnDestroy {
     'about',
     'projects',
     'skills',
-    'experience',
     'education',
+    'experience',
     'certificates',
     'contact',
   ];

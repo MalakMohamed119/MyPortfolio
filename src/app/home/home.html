@@ -19,16 +19,7 @@
         <span>View Work</span>
         <span aria-hidden="true">-></span>
       </a>
-      <a
-        class="btn btn-ghost"
-        [href]="gmailComposeUrl"
-        target="_blank"
-        rel="noopener"
-        aria-label="Send email with Gmail"
-      >
-        <span>Hire Me</span>
-        <span aria-hidden="true">-></span>
-      </a>
+  
       <a
         class="btn btn-outline"
         href="/Malak Mohamed Mostafa -CV.pdf"
@@ -71,23 +62,20 @@
   </div>
 
   <aside class="profile-panel" aria-label="Profile summary" data-aos="fade-left" data-aos-delay="120">
-    <div class="code-window floating-card">
-      <div class="window-dots" aria-hidden="true">
-        <span></span>
-        <span></span>
-        <span></span>
+    <div class="portrait-shell">
+      <div class="portrait-frame">
+        <img [src]="contact.avatar" [alt]="contact.name" />
       </div>
-      <pre><code>const developer = {{ '{' }}
-  name: 'Malak',
-  stack: ['Angular', 'TS', 'SCSS'],
-  mission: 'ship polished UI'
-{{ '}' }};</code></pre>
-    </div>
 
-    <div class="portrait-frame">
-      <img [src]="contact.avatar" [alt]="contact.name" />
-      <div class="orbit-label angular">Angular</div>
-      <div class="orbit-label ui">UI Craft</div>
+      <div class="portrait-badge portrait-badge-top">
+        <span aria-hidden="true"></span>
+        Angular Developer
+      </div>
+
+      <div class="portrait-badge portrait-badge-bottom">
+        <strong>10+</strong>
+        shipped projects
+      </div>
     </div>
 
     <div class="portrait-card">
@@ -219,6 +207,33 @@
   </div>
 </section>
 
+<section class="section-shell education-section" id="education" data-aos="fade-up">
+  <div class="section-heading">
+    <p class="eyebrow">Education</p>
+    <h2>Software engineering background with a strong academic base.</h2>
+  </div>
+
+  <article class="education-card">
+    <div>
+      <span class="timeline-date">Oct 2022 - Jun 2026</span>
+      <h3>Bachelor of Software Engineering</h3>
+      <p class="muted">
+        Faculty of Computers and Artificial Intelligence, Capital University (formerly Helwan) |
+        Cairo
+      </p>
+      <p>
+        Coursework focused on OOP, data structures, algorithms, software engineering, and
+        practical problem solving.
+      </p>
+    </div>
+
+    <div class="education-meta" aria-label="Academic details">
+      <span>GPA <strong>3.3 / 4.0</strong></span>
+      <span>Expected graduation <strong>2026</strong></span>
+    </div>
+  </article>
+</section>
+
 <section class="section-shell timeline-section" id="experience" data-aos="fade-up">
   <div class="section-heading">
     <p class="eyebrow">Experience</p>
@@ -246,33 +261,6 @@
       </p>
     </article>
   </div>
-</section>
-
-<section class="section-shell education-section" id="education" data-aos="fade-up">
-  <div class="section-heading">
-    <p class="eyebrow">Education</p>
-    <h2>Software engineering background with a strong academic base.</h2>
-  </div>
-
-  <article class="education-card">
-    <div>
-      <span class="timeline-date">Oct 2022 - Jun 2026</span>
-      <h3>Bachelor of Software Engineering</h3>
-      <p class="muted">
-        Faculty of Computers and Artificial Intelligence, Capital University (formerly Helwan) |
-        Cairo
-      </p>
-      <p>
-        Coursework focused on OOP, data structures, algorithms, software engineering, and
-        practical problem solving.
-      </p>
-    </div>
-
-    <div class="education-meta" aria-label="Academic details">
-      <span>GPA <strong>3.3 / 4.0</strong></span>
-      <span>Expected graduation <strong>2026</strong></span>
-    </div>
-  </article>
 </section>
 
 <section class="section-shell certificates-section" id="certificates" data-aos="fade-up">

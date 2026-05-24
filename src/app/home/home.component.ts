@@ -163,10 +163,10 @@ export class HomeComponent implements AfterViewInit {
     },
     {
       title: 'Q&A Platform',
-      type: 'Route Academy project',
-      category: 'JavaScript',
-      description: 'Quiz platform with dynamic DOM behavior, real-time score calculation, and instant feedback states.',
-      stack: ['JavaScript', 'HTML5', 'CSS3', 'DOM'],
+      type: 'Personal revision project',
+      category: 'Angular',
+      description: 'Self-built Q&A review project for practicing and revising Angular and frontend topics through focused topic-based questions.',
+      stack: ['Angular Topics', 'Frontend', 'JavaScript', 'Practice'],
       link: 'https://malakmohamed119.github.io/Q-A-/',
     },
     {

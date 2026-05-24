@@ -53,10 +53,10 @@ export class ProjectsComponent implements OnInit {
     },
     {
       title: 'Q&A Platform',
-      type: 'Route Academy project',
-      category: 'JavaScript',
-      description: 'Quiz platform with dynamic DOM behavior, real-time score calculation, and instant feedback states.',
-      stack: ['JavaScript', 'HTML5', 'CSS3', 'DOM'],
+      type: 'Personal revision project',
+      category: 'Angular',
+      description: 'Self-built Q&A review project for practicing and revising Angular and frontend topics through focused topic-based questions.',
+      stack: ['Angular Topics', 'Frontend', 'JavaScript', 'Practice'],
       link: 'https://malakmohamed119.github.io/Q-A-/',
     },
     {
@@ -68,20 +68,20 @@ export class ProjectsComponent implements OnInit {
       link: 'https://malakmohamed119.github.io/WeatherApp/',
     },
     {
-      title: 'Smart Login System',
-      type: 'Route Academy project',
-      category: 'JavaScript',
-      description: 'Client-side authentication flow using LocalStorage persistence and Regex validation for strict form inputs.',
-      stack: ['JavaScript', 'LocalStorage', 'Regex'],
-      link: 'https://malakmohamed119.github.io/Smart-LOGIN-System/',
-    },
-    {
       title: 'Bookmark App',
       type: 'Route Academy project',
       category: 'JavaScript',
       description: 'CRUD bookmark manager for saving, validating, indexing, and managing browser links in LocalStorage.',
       stack: ['JavaScript', 'CRUD', 'Bootstrap'],
       link: 'https://malakmohamed119.github.io/Bookmark/',
+    },
+    {
+      title: 'Smart Login System',
+      type: 'Route Academy project',
+      category: 'JavaScript',
+      description: 'Client-side authentication flow using LocalStorage persistence and Regex validation for strict form inputs.',
+      stack: ['JavaScript', 'LocalStorage', 'Regex'],
+      link: 'https://malakmohamed119.github.io/Smart-LOGIN-System/',
     },
     {
       title: 'Trendify',
