@@ -1,31 +1,30 @@
 <div class="projects-page">
   <header class="page-header">
-    <a routerLink="/" class="back-link" aria-label="Back to home">
+    <a routerLink="/" class="back-link" [attr.aria-label]="t().backAria">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <line x1="19" y1="12" x2="5" y2="12"></line>
         <polyline points="12 19 5 12 12 5"></polyline>
       </svg>
-      Back
+      {{ t().back }}
     </a>
     <div class="header-content">
-      <p class="eyebrow">Featured Work</p>
-      <h1>Frontend Projects</h1>
+      <p class="eyebrow">{{ t().eyebrow }}</p>
+      <h1>{{ t().title }}</h1>
       <p class="header-desc">
-        A focused collection of Angular, JavaScript, and UI projects showing API integration,
-        responsive implementation, component thinking, and polished frontend delivery.
+        {{ t().desc }}
       </p>
-      <div class="header-signals" aria-label="Project focus areas">
+      <div class="header-signals" [attr.aria-label]="t().focusAreas">
         <span>Angular</span>
         <span>JavaScript</span>
-        <span>Responsive UI</span>
-        <span>Live demos</span>
+        <span>{{ t().responsiveUi }}</span>
+        <span>{{ t().liveDemos }}</span>
       </div>
     </div>
   </header>
 
   <section class="projects-section">
     <div class="section-shell">
-      <div class="filter-bar" aria-label="Project filters">
+      <div class="filter-bar" [attr.aria-label]="t().filters">
         @for (filter of filters; track filter) {
           <button
             type="button"
@@ -33,15 +32,15 @@
             (click)="setFilter(filter)"
             [attr.aria-pressed]="activeFilter() === filter"
           >
-            {{ filter }}
+            {{ filterLabel(filter) }}
           </button>
         }
       </div>
 
       <div class="project-grid">
-        @for (project of filteredProjects(); track project.title) {
+        @for (project of filteredProjects(); track project.title; let i = $index) {
           <article class="project-card" [class.featured]="project.featured">
-            <div class="project-index" aria-hidden="true"></div>
+            <div class="project-index" aria-hidden="true">{{ projectNumber(i) }}</div>
             <div class="project-main">
             <div class="project-topline">
               <span>{{ project.category }}</span>
@@ -55,16 +54,16 @@
 
             <div class="project-meta">
               <div class="project-tools">
-                <span class="tools-label">Tools</span>
-                <div class="tag-list" aria-label="Technology stack">
+                <span class="tools-label">{{ t().tools }}</span>
+                <div class="tag-list" [attr.aria-label]="t().techStack">
                   @for (tech of project.stack; track tech) {
                     <span>{{ tech }}</span>
                   }
                 </div>
               </div>
               <a class="project-link" [href]="project.link" target="_blank" rel="noopener">
-                Live Demo
-                <span aria-hidden="true">-></span>
+                {{ t().liveDemo }}
+                <span aria-hidden="true">{{ language() === 'ar' ? '←' : '→' }}</span>
               </a>
             </div>
           </article>

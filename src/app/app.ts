@@ -1,7 +1,8 @@
-import { AfterViewInit, Component, OnDestroy, signal } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NavigationEnd, Router, RouterOutlet, RouterLink } from '@angular/router';
 import { filter, Subscription } from 'rxjs';
+import { LanguageService } from './language.service';
 
 @Component({
   selector: 'app-root',
@@ -10,9 +11,12 @@ import { filter, Subscription } from 'rxjs';
   styleUrl: './app.scss',
 })
 export class App implements AfterViewInit, OnDestroy {
+  private readonly languageService = inject(LanguageService);
+
   readonly isMenuOpen = signal(false);
   readonly activeNav = signal('about');
   readonly isDarkMode = signal(false);
+  readonly language = this.languageService.language;
 
   private readonly sectionIds = [
     'about',
@@ -46,6 +50,105 @@ export class App implements AfterViewInit, OnDestroy {
   readonly contactForm = {
     email: '',
     message: '',
+  };
+
+  readonly copy = {
+    en: {
+      name: 'Malak Mohamed Mostafa',
+      homeAria: 'Go to home',
+      navAria: 'Main navigation',
+      nav: {
+        about: 'About',
+        education: 'Education',
+        experience: 'Experience',
+        projects: 'Projects',
+        skills: 'Skills',
+        certificates: 'Certificates',
+        community: 'Community',
+        contact: 'Contact',
+      },
+      menuToggle: 'Toggle navigation menu',
+      languageToggle: 'Switch website to Arabic',
+      languageTitle: 'Arabic',
+      lightMode: 'Light mode',
+      darkMode: 'Dark mode',
+      switchToLight: 'Switch to light mode',
+      switchToDark: 'Switch to dark mode',
+      whatsapp: 'Contact on WhatsApp',
+      footerEyebrow: 'Contact',
+      footerTitle: "Let's build something great.",
+      footerButton: 'Get in Touch',
+      quickTitle: 'Send a quick message',
+      quickText: 'Leave your email and message, and it will open as a ready-to-send email.',
+      emailLabel: 'Your email',
+      emailPlaceholder: 'you@example.com',
+      messageLabel: 'Message',
+      messagePlaceholder: 'Tell me what you want to build...',
+      sendButton: 'Send Message',
+      footerLinks: 'Footer links',
+      contactInfo: 'Contact Info',
+      email: 'Email',
+      phone: 'Phone',
+      contactPhone: '01148403342',
+      location: 'Location',
+      contactLocation: '15 May City, Helwan, Cairo',
+      social: 'Social',
+      focus: 'Focus',
+      focusText: 'Angular frontend work, responsive product UI, API integration, and polished delivery.',
+      copyright: '(c) 2026 Malak Mohamed Mostafa',
+      built: 'Built with Angular',
+      subject: 'Portfolio message',
+      senderEmail: 'Sender email',
+      formMessage: 'Message:',
+    },
+    ar: {
+      name: 'ملك محمد مصطفى',
+      homeAria: 'الذهاب للصفحة الرئيسية',
+      navAria: 'التنقل الرئيسي',
+      nav: {
+        about: 'نبذة',
+        education: 'التعليم',
+        experience: 'الخبرة',
+        projects: 'المشاريع',
+        skills: 'المهارات',
+        certificates: 'الشهادات',
+        community: 'المجتمع',
+        contact: 'تواصل',
+      },
+      menuToggle: 'فتح وإغلاق قائمة التنقل',
+      languageToggle: 'تحويل الموقع إلى الإنجليزية',
+      languageTitle: 'English',
+      lightMode: 'الوضع الفاتح',
+      darkMode: 'الوضع الداكن',
+      switchToLight: 'التبديل إلى الوضع الفاتح',
+      switchToDark: 'التبديل إلى الوضع الداكن',
+      whatsapp: 'تواصل عبر واتساب',
+      footerEyebrow: 'تواصل',
+      footerTitle: 'هيا نبني تجربة ويب مميزة.',
+      footerButton: 'تواصل معي',
+      quickTitle: 'أرسل رسالة سريعة',
+      quickText: 'اكتب بريدك ورسالتك، وسيتم فتحها كإيميل جاهز للإرسال.',
+      emailLabel: 'بريدك الإلكتروني',
+      emailPlaceholder: 'you@example.com',
+      messageLabel: 'الرسالة',
+      messagePlaceholder: 'احكي لي عن الفكرة أو المشروع...',
+      sendButton: 'إرسال الرسالة',
+      footerLinks: 'روابط الفوتر',
+      contactInfo: 'بيانات التواصل',
+      email: 'الإيميل',
+      phone: 'رقم الهاتف',
+      contactPhone: '٠١١٤٨٤٠٣٣٤٢',
+      location: 'الموقع',
+      contactLocation: 'مدينة ١٥ مايو، حلوان، القاهرة',
+      social: 'مواقع التواصل الاجتماعي',
+      focus: 'الهدف',
+      focusText: 'واجهات Angular، تصميمات متجاوبة، ربط APIs، وتسليم تجربة متقنة.',
+      copyright: '(c) 2026 ملك محمد مصطفى',
+      built: 'تم بناؤه باستخدام Angular',
+      subject: 'رسالة من البورتفوليو',
+      senderEmail: 'بريد المرسل',
+      formMessage: 'الرسالة:',
+    },
   };
 
   constructor(private readonly router: Router) {
@@ -87,14 +190,24 @@ export class App implements AfterViewInit, OnDestroy {
     this.applyTheme(!this.isDarkMode(), true);
   }
 
+  toggleLanguage(): void {
+    this.languageService.toggleLanguage();
+    this.closeMenu();
+  }
+
+  t() {
+    return this.copy[this.language()];
+  }
+
   sendContactMessage(event: Event): void {
     event.preventDefault();
 
-    const subject = 'Portfolio message';
+    const text = this.t();
+    const subject = text.subject;
     const body = [
-      `Sender email: ${this.contactForm.email}`,
+      `${text.senderEmail}: ${this.contactForm.email}`,
       '',
-      'Message:',
+      text.formMessage,
       this.contactForm.message,
     ].join('\n');
     const composeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(

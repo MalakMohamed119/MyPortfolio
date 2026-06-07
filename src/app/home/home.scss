@@ -980,6 +980,36 @@ p {
   font-weight: 950;
 }
 
+:host-context(.arabic-language) {
+  .experience-type {
+    margin: 0 0 0.65rem 0.65rem;
+  }
+
+  .timeline-date {
+    padding-right: 1.25rem;
+    padding-left: 0;
+  }
+
+  .single-experience-card .timeline-date {
+    padding-right: 0;
+  }
+
+  .timeline-item p,
+  .project-card p,
+  .skill-card p,
+  .activity-card p {
+    text-align: right;
+  }
+
+  .pro-modal-content {
+    padding-top: 4.15rem;
+  }
+
+  .pro-title {
+    margin-right: 0;
+  }
+}
+
 .muted {
   color: #554642;
   font-weight: 850;

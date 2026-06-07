@@ -209,7 +209,8 @@ a:focus-visible, button:focus-visible {
   }
 }
 
-.theme-toggle {
+.theme-toggle,
+.language-toggle {
   position: relative;
   display: inline-grid;
   place-items: center;
@@ -238,6 +239,11 @@ a:focus-visible, button:focus-visible {
     color: #7a4d15;
     box-shadow: 0 0.5rem 1.1rem rgba(157, 31, 59, 0.11);
   }
+}
+
+.language-toggle {
+  font-size: 0.78rem;
+  font-weight: 950;
 }
 
 .theme-icon {
@@ -358,6 +364,7 @@ a:focus-visible, button:focus-visible {
   }
 
   .theme-toggle,
+  .language-toggle,
   .menu-toggle {
     color: #fff8f2;
     border-color: rgba(255, 248, 242, 0.12);
@@ -798,6 +805,11 @@ main { overflow: hidden; }
   }
 
   .theme-toggle {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+
+  .language-toggle {
     width: 2.75rem;
     height: 2.75rem;
   }

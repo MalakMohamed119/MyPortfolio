@@ -18,6 +18,11 @@ body {
   transition: background 220ms ease, color 220ms ease;
 }
 
+body.arabic-language {
+  font-family:
+    "Segoe UI", Tahoma, Arial, ui-sans-serif, system-ui, sans-serif;
+}
+
 html.dark-theme body {
   background: #100c10;
 }

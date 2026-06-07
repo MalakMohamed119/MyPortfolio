@@ -2,42 +2,41 @@
   <div class="hero-copy" data-aos="fade-up">
     <div class="availability-pill">
       <span aria-hidden="true"></span>
-      Available for Angular frontend roles
+      {{ t().heroAvailable }}
     </div>
 
-    <p class="eyebrow">Front-End Developer & Software Engineer</p>
+    <p class="eyebrow">{{ t().heroEyebrow }}</p>
 
-    <h1 id="hero-title">I build Angular interfaces that feel fast, sharp, and trusted.</h1>
+    <h1 id="hero-title">{{ t().heroTitle }}</h1>
 
     <p class="intro">
-      I am {{ contact.name }}, a frontend developer turning product ideas into polished,
-      responsive, API-driven web experiences with strong component architecture.
+      {{ t().heroIntro }}
     </p>
 
     <div class="hero-actions" aria-label="Primary actions">
-      <a class="btn btn-primary" routerLink="/projects" aria-label="View selected projects">
-        <span>View Work</span>
-        <span aria-hidden="true">-></span>
+      <a class="btn btn-primary" routerLink="/projects" [attr.aria-label]="t().viewWork">
+        <span>{{ t().viewWork }}</span>
+        <span aria-hidden="true">{{ language() === 'ar' ? '←' : '→' }}</span>
       </a>
   
       <a
         class="btn btn-outline"
         href="/Malak Mohamed Mostafa - CV.pdf"
         download
-        aria-label="Download CV"
+        [attr.aria-label]="t().downloadCv"
       >
-        <span>Download CV</span>
+        <span>{{ t().downloadCv }}</span>
       </a>
     </div>
 
-    <div class="hero-socials" aria-label="Social profiles">
-      <a [href]="contact.github" target="_blank" rel="noopener" aria-label="GitHub profile">
+    <div class="hero-socials" [attr.aria-label]="t().socials">
+      <a [href]="contact.github" target="_blank" rel="noopener" [attr.aria-label]="t().githubProfile">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
           <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.39.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.66-.3-5.46-1.33-5.46-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23A11.5 11.5 0 0 1 12 5.32c1.02 0 2.04.14 3 .4 2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.8 5.62-5.47 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12.01 12.01 0 0 0 24 12c0-6.63-5.37-12-12-12Z" />
         </svg>
         GitHub
       </a>
-      <a [href]="contact.linkedin" target="_blank" rel="noopener" aria-label="LinkedIn profile">
+      <a [href]="contact.linkedin" target="_blank" rel="noopener" [attr.aria-label]="t().linkedinProfile">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
           <path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0ZM.5 8.5h4v15h-4v-15Zm8 0h3.82v2.05h.05c.53-1 1.83-2.35 3.77-2.35 4.03 0 4.77 2.65 4.77 6.1v9.2h-4v-8.15c0-1.94-.03-4.44-2.7-4.44-2.7 0-3.11 2.11-3.11 4.3v8.29h-4V8.5Z" />
         </svg>
@@ -45,98 +44,96 @@
       </a>
     </div>
 
-    <div class="hero-summary" aria-label="Professional summary">
+    <div class="hero-summary" [attr.aria-label]="t().summary">
       <div>
-        <span>Core</span>
-        <strong>Angular, TypeScript, RxJS</strong>
+        <span>{{ t().core }}</span>
+        <strong>{{ t().coreValue }}</strong>
       </div>
       <div>
-        <span>Focus</span>
-        <strong>Responsive product UI</strong>
+        <span>{{ t().focus }}</span>
+        <strong>{{ t().focusValue }}</strong>
       </div>
       <div>
-        <span>Strength</span>
-        <strong>API-driven frontend flows</strong>
+        <span>{{ t().strength }}</span>
+        <strong>{{ t().strengthValue }}</strong>
       </div>
     </div>
   </div>
 
-  <aside class="profile-panel" aria-label="Profile summary" data-aos="fade-left" data-aos-delay="120">
+  <aside class="profile-panel" [attr.aria-label]="t().profile" data-aos="fade-left" data-aos-delay="120">
     <div class="portrait-shell">
       <div class="portrait-frame">
-        <img [src]="contact.avatar" [alt]="contact.name" />
+        <img [src]="contact.avatar" [alt]="t().name" />
       </div>
 
       <div class="portrait-badge portrait-badge-top">
         <span aria-hidden="true"></span>
-        Angular Developer
+        {{ t().badgeRole }}
       </div>
 
       <div class="portrait-badge portrait-badge-bottom">
-        <strong>10+</strong>
-        completed projects
+        <strong>{{ number('10+') }}</strong>
+        {{ t().completedProjects }}
       </div>
     </div>
 
     <div class="portrait-card">
-      <strong>{{ contact.name }}</strong>
-      <span>{{ contact.role }}</span>
+      <strong>{{ t().name }}</strong>
+      <span>{{ t().contactRole }}</span>
     </div>
   </aside>
 </section>
 
 <section class="section-shell proof-strip" aria-label="Portfolio proof points" data-aos="fade-up">
   <div>
-    <strong>10+</strong>
-    <span>completed projects</span>
+    <strong>{{ number('10+') }}</strong>
+    <span>{{ t().completedProjects }}</span>
   </div>
   <div>
-    <strong>3</strong>
-    <span>certificates</span>
+    <strong>{{ number(3) }}</strong>
+    <span>{{ t().proofCertificates }}</span>
   </div>
   <div>
-    <strong>2026</strong>
-    <span>software engineering graduate</span>
+    <strong>{{ number(2026) }}</strong>
+    <span>{{ t().proofGraduate }}</span>
   </div>
   <div>
-    <strong>Cairo</strong>
-    <span>open to frontend work</span>
+    <strong>{{ t().proofLocation }}</strong>
+    <span>{{ t().proofCairo }}</span>
   </div>
 </section>
 
 <section class="section-shell about-section" id="about" data-aos="fade-up">
   <div class="section-heading">
-    <p class="eyebrow">About</p>
-    <h2>Frontend developer focused on Angular interfaces.</h2>
+    <p class="eyebrow">{{ t().aboutEyebrow }}</p>
+    <h2>{{ t().aboutTitle }}</h2>
   </div>
 
   <div class="about-layout">
     <div class="about-copy spotlight-panel">
       <p>
-        I care about the full interface: the data flow behind it, the accessibility around it,
-        the responsive behavior under pressure, and the tiny transitions that make it feel alive.
+        {{ t().aboutP1 }}
       </p>
       <p>
-        My strongest work combines Angular, TypeScript, SCSS, API integration, and practical UI
-        judgment. I am building a portfolio that proves I can think, design, debug, and ship.
+        {{ t().aboutP2 }}
       </p>
     </div>
 
-    <div class="about-highlights" aria-label="Professional strengths">
+    <div class="about-highlights" [attr.aria-label]="t().strengthsAria">
       <article>
         <span>01</span>
-        <h3>Product Instinct</h3>
-        <p>I shape interfaces around clarity, hierarchy, and useful user flow.</p>
+        <h3>{{ t().productInstinct }}</h3>
+        <p>{{ t().productInstinctText }}</p>
       </article>
       <article>
         <span>02</span>
-        <h3>Frontend Systems</h3>
-        <p>I build with reusable components, clean styles, and maintainable structure.</p>
+        <h3>{{ t().frontendSystems }}</h3>
+        <p>{{ t().frontendSystemsText }}</p>
       </article>
       <article>
         <span>03</span>
-        <h3>Visual Polish</h3>
-        <p>I refine spacing, motion, responsive states, and the feel of interaction.</p>
+        <h3>{{ t().visualPolish }}</h3>
+        <p>{{ t().visualPolishText }}</p>
       </article>
     </div>
   </div>
@@ -144,23 +141,22 @@
 
 <section class="section-shell education-section" id="education" data-aos="fade-up">
   <div class="section-heading">
-    <p class="eyebrow">Education</p>
-    <h2>Bachelor's degree in Software Engineering.</h2>
+    <p class="eyebrow">{{ t().educationEyebrow }}</p>
+    <h2>{{ t().educationTitle }}</h2>
   </div>
 
   <article class="education-card">
     <div>
-      <span class="timeline-date">Graduated: Jun 2026</span>
-      <h3>Bachelor of Software Engineering</h3>
+      <span class="timeline-date">{{ t().graduatedShort }}</span>
+      <h3>{{ t().degree }}</h3>
       <p class="muted">
-        Faculty of Computers and Artificial Intelligence, Capital University (formerly Helwan) | Cairo
+        {{ t().faculty }}
       </p>
       <p>
-        Academic study focused on software engineering fundamentals, problem solving, and
-        building reliable software systems.
+        {{ t().educationText }}
       </p>
 
-      <div class="education-coursework" aria-label="Relevant coursework">
+      <div class="education-coursework" [attr.aria-label]="t().coursework">
         <span>Programming Fundamentals</span>
         <span>OOP</span>
         <span>Software Engineering</span>
@@ -176,56 +172,54 @@
       </div>
     </div>
 
-    <div class="education-meta" aria-label="Academic details">
-      <span>GPA <strong>3.3 / 4.0</strong></span>
-      <span>Overall grade <strong>Very Good</strong></span>
-      <span>Graduated <strong>June 2026</strong></span>
+    <div class="education-meta" [attr.aria-label]="t().academicDetails">
+      <span>{{ t().gpa }} <strong>{{ number('3.3 / 4.0') }}</strong></span>
+      <span>{{ t().overallGrade }} <strong>{{ t().veryGood }}</strong></span>
+      <span>{{ t().graduated }} <strong>{{ t().june2026 }}</strong></span>
     </div>
   </article>
 </section>
 
 <section class="section-shell timeline-section" id="experience" data-aos="fade-up">
   <div class="section-heading">
-    <p class="eyebrow">Experience</p>
-    <h2>Work experience and practical training.</h2>
+    <p class="eyebrow">{{ t().experienceEyebrow }}</p>
+    <h2>{{ t().experienceTitle }}</h2>
   </div>
 
   <div class="timeline-grid">
     <article class="timeline-item single-experience-card">
       <div>
-        <span class="experience-type">Work</span>
-        <span class="timeline-date">Oct 2024 - Present</span>
-        <h3>Programming Instructor</h3>
-        <p class="muted">3C - Creative Children Community | Part-time | Cairo, Egypt</p>
+        <span class="experience-type">{{ t().work }}</span>
+        <span class="timeline-date">{{ t().presentDate }}</span>
+        <h3>{{ t().instructor }}</h3>
+        <p class="muted">{{ t().instructorPlace }}</p>
         <p>
-          Teach Scratch, Python, HTML, CSS, and App Inventor through interactive lessons,
-          project-based learning, and personalized student support.
+          {{ t().instructorText }}
         </p>
       </div>
 
-      <div class="experience-summary" aria-label="Experience focus">
-        <span>Teaching</span>
-        <span>Kids coding</span>
-        <span>Project-based learning</span>
+      <div class="experience-summary" [attr.aria-label]="t().experienceFocus">
+        <span>{{ t().teaching }}</span>
+        <span>{{ t().kidsCoding }}</span>
+        <span>{{ t().projectLearning }}</span>
       </div>
     </article>
 
     <article class="timeline-item training-experience-card">
-      <span class="experience-type">Course</span>
-      <span class="timeline-date">  Aug 2025</span>
-      <h3>MEAN Stack Development</h3>
+      <span class="experience-type">{{ t().course }}</span>
+      <span class="timeline-date">{{ t().meanDate }}</span>
+      <h3>{{ t().meanTitle }}</h3>
       <p class="muted">Information Technology Institute (ITI)</p>
-      <p>Completed a MEAN Stack course focused on Angular, TypeScript, and MongoDB.</p>
+      <p>{{ t().meanText }}</p>
     </article>
 
     <article class="timeline-item training-experience-card">
-      <span class="experience-type">Course</span>
-      <span class="timeline-date">Mar 2025 - Sep 2025</span>
-      <h3>Front-End Development Course</h3>
+      <span class="experience-type">{{ t().course }}</span>
+      <span class="timeline-date">{{ t().routeDate }}</span>
+      <h3>{{ t().routeTitle }}</h3>
       <p class="muted">Route Academy</p>
       <p>
-        Completed structured frontend training covering Angular, JavaScript, TypeScript, SASS,
-        Bootstrap, Tailwind, APIs, Git, hosting, and async workflows.
+        {{ t().routeText }}
       </p>
     </article>
   </div>
@@ -234,16 +228,16 @@
 <section class="section-shell projects-section" id="projects" data-aos="fade-up">
   <div class="section-heading section-heading-row">
     <div>
-      <p class="eyebrow">Selected Work</p>
-      <h2>Selected Frontend Projects</h2>
+      <p class="eyebrow">{{ t().selectedWork }}</p>
+      <h2>{{ t().selectedTitle }}</h2>
     </div>
-    <a routerLink="/projects" class="section-link">All Projects <span aria-hidden="true">-></span></a>
+    <a routerLink="/projects" class="section-link">{{ t().allProjects }} <span aria-hidden="true">{{ language() === 'ar' ? '←' : '→' }}</span></a>
   </div>
 
   <div class="project-grid">
     @for (project of previewProjects(); track project.title; let i = $index) {
       <article class="project-card" [class.featured]="project.featured" data-aos="fade-up" [attr.data-aos-delay]="i * 80">
-        <div class="project-index" aria-hidden="true">0{{ i + 1 }}</div>
+        <div class="project-index" aria-hidden="true">{{ paddedNumber(i + 1) }}</div>
         <div class="project-body">
           <div class="project-topline">
             <span>{{ project.category }}</span>
@@ -255,16 +249,16 @@
         </div>
         <div class="project-meta">
           <div class="project-tools">
-            <span class="tools-label">Tools</span>
-            <div class="tag-list" aria-label="Technology stack">
+            <span class="tools-label">{{ t().tools }}</span>
+            <div class="tag-list" [attr.aria-label]="t().techStack">
               @for (tech of project.stack; track tech) {
                 <span>{{ tech }}</span>
               }
             </div>
           </div>
           <a class="project-link" [href]="project.link" target="_blank" rel="noopener">
-            Live Demo
-            <span aria-hidden="true">-></span>
+            {{ t().liveDemo }}
+            <span aria-hidden="true">{{ language() === 'ar' ? '←' : '→' }}</span>
           </a>
         </div>
       </article>
@@ -274,17 +268,17 @@
 
 <section class="section-shell split-section" id="skills" data-aos="fade-up">
   <div class="section-heading">
-    <p class="eyebrow">Skills</p>
-    <h2>Technologies and tools I work with.</h2>
+    <p class="eyebrow">{{ t().skillsEyebrow }}</p>
+    <h2>{{ t().skillsTitle }}</h2>
   </div>
 
   <div class="skill-grid">
-    @for (group of skillGroups; track group.title; let i = $index) {
+    @for (group of skillGroups(); track group.title; let i = $index) {
       <article class="skill-card" data-aos="fade-up" [attr.data-aos-delay]="i * 70">
-        <div class="skill-number">0{{ i + 1 }}</div>
+        <div class="skill-number">{{ paddedNumber(i + 1) }}</div>
         <h3>{{ group.title }}</h3>
         <p>{{ group.description }}</p>
-        <div class="tag-list skill-tags" aria-label="Skills for {{ group.title }}">
+        <div class="tag-list skill-tags" [attr.aria-label]="t().skillAria + ' ' + group.title">
           @for (skill of group.skills; track skill) {
             <span>{{ skill }}</span>
           }
@@ -296,12 +290,12 @@
 
 <section class="section-shell certificates-section" id="certificates" data-aos="fade-up">
   <div class="section-heading">
-    <p class="eyebrow">Certificates</p>
-    <h2>Certificates from completed learning programs.</h2>
+    <p class="eyebrow">{{ t().certificatesEyebrow }}</p>
+    <h2>{{ t().certificatesTitle }}</h2>
   </div>
 
-  <div class="cert-grid" aria-label="Certificates">
-    @for (cert of certificates; track cert.title; let i = $index) {
+  <div class="cert-grid" [attr.aria-label]="t().certificatesAria">
+    @for (cert of certificates(); track cert.title; let i = $index) {
       <article
         class="cert-card"
         data-aos="fade-up"
@@ -311,7 +305,7 @@
         tabindex="0"
         (keydown.enter)="openCertificate(cert)"
         (keydown.space)="$event.preventDefault(); openCertificate(cert)"
-        [attr.aria-label]="'Open certificate ' + cert.title"
+        [attr.aria-label]="t().openCertificate + ' ' + cert.title"
       >
         <div class="cert-media">
           <img [src]="cert.imageSrc" [alt]="cert.title" loading="lazy" />
@@ -328,27 +322,27 @@
 
 <section class="section-shell activities-section" id="community" data-aos="fade-up">
   <div class="section-heading">
-    <p class="eyebrow">Community</p>
-    <h2>Community activities.</h2>
+    <p class="eyebrow">{{ t().communityEyebrow }}</p>
+    <h2>{{ t().communityTitle }}</h2>
   </div>
 
   <div class="activity-list">
     <article class="activity-card">
-      <span class="activity-type">Community</span>
+      <span class="activity-type">{{ t().community }}</span>
       <h3>Helwan ICPC Community</h3>
-      <p>Competitive programming practice using C++.</p>
+      <p>{{ t().icpcText }}</p>
     </article>
 
     <article class="activity-card">
-      <span class="activity-type">Community</span>
+      <span class="activity-type">{{ t().community }}</span>
       <h3>Training Camp - Helwan</h3>
-      <p>Algorithmic challenges using C.</p>
+      <p>{{ t().campText }}</p>
     </article>
 
     <article class="activity-card">
-      <span class="activity-type">Community</span>
+      <span class="activity-type">{{ t().community }}</span>
       <h3>Minders'23 Workshop</h3>
-      <p>Mentorship workshop in HTML, CSS, and JavaScript.</p>
+      <p>{{ t().mindersText }}</p>
     </article>
   </div>
 </section>
@@ -356,7 +350,7 @@
 @if (selectedCertificate(); as cert) {
   <div class="cert-modal-backdrop" role="dialog" aria-modal="true" (click)="closeCertificateModal()">
     <div class="pro-modal" (click)="$event.stopPropagation()">
-      <button type="button" class="pro-modal-close" (click)="closeCertificateModal()" aria-label="Close certificate">
+      <button type="button" class="pro-modal-close" (click)="closeCertificateModal()" [attr.aria-label]="t().closeCertificate">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <line x1="18" y1="6" x2="6" y2="18"></line>
           <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -364,7 +358,7 @@
       </button>
 
       <div class="pro-modal-content">
-        <p class="pro-eyebrow">Certificate Details</p>
+        <p class="pro-eyebrow">{{ t().certificateDetails }}</p>
         <h3 class="pro-title">{{ cert.title }}</h3>
 
         <div class="pro-cert-media">
@@ -384,7 +378,7 @@
 
         @if (cert.skills && cert.skills.length > 0) {
           <div class="pro-skills">
-            <h4>Skills & Technologies</h4>
+            <h4>{{ t().skillsTech }}</h4>
             <div class="pro-tag-list">
               @for (skill of cert.skills; track skill) {
                 <span class="pro-skill-tag">{{ skill }}</span>

@@ -244,10 +244,6 @@ p {
   padding-top: 0.12rem;
 }
 
-.project-index::before {
-  content: counter(project, decimal-leading-zero);
-}
-
 .project-topline {
   display: flex;
   align-items: center;
