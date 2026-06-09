@@ -84,7 +84,7 @@ export class ProjectsComponent implements OnInit {
     { title: 'LoCum', type: 'منصة عمل حر في المجال الصحي', category: 'Angular', description: 'منصة متجاوبة تساعد دور الرعاية والمنشآت التمريضية على طلب مساعدين مؤهلين من خلال واجهة Angular نظيفة وقابلة للتوسع.', stack: ['Angular', 'TypeScript', 'SCSS', 'API Integration'], link: 'https://lo-cum.vercel.app/', featured: true },
     { title: 'EvoShop', type: 'مشروع تدريبي من Route Academy', category: 'Angular', description: 'تجربة متجر إلكتروني متكاملة تشمل تسجيل الدخول، إدارة السلة، عرض بيانات ديناميكية من API، ومحاكاة عملية الدفع.', stack: ['Angular', 'TypeScript', 'RxJS', 'Tailwind CSS'], link: 'https://e-commerce-five-kappa-11.vercel.app' },
     { title: 'Movie Night', type: 'مشروع تدريبي في ITI', category: 'Angular', description: 'تطبيق لاكتشاف الأفلام يعتمد على APIs خارجية، مع عرض واضح لحالة التحميل وتصميم Bootstrap متجاوب.', stack: ['Angular', 'TypeScript', 'Bootstrap', 'API Integration'], link: 'https://movie-night-seven.vercel.app' },
-    { title: 'Q&A Platform', type: 'مشروع مراجعة شخصي', category: 'Angular', description: 'منصة أسئلة وأجوبة للتدريب والمراجعة على Angular وموضوعات الواجهات الأمامية من خلال أسئلة منظمة حسب الموضوع.', stack: ['Angular Topics', 'واجهات أمامية', 'JavaScript', 'Practice'], link: 'https://malakmohamed119.github.io/Q-A-/' },
+    { title: 'Q&A Platform', type: 'مشروع مراجعة شخصي', category: 'Angular', description: 'منصة أسئلة وأجوبة للتدريب والمراجعة على Angular وموضوعات الواجهات الأمامية من خلال أسئلة منظمة حسب الموضوع.', stack: ['Angular Topics', 'واجهات أمامية', 'JavaScript', 'Practice'], link: 'https://q-a-omega.vercel.app/' },
     { title: 'Weather App', type: 'مشروع تدريبي من Route Academy', category: 'JavaScript', description: 'تطبيق طقس تفاعلي يجلب تحديثات الطقس الحية ويعرضها حسب بيانات الموقع.', stack: ['JavaScript', 'Bootstrap', 'Async API'], link: 'https://malakmohamed119.github.io/WeatherApp/' },
     { title: 'Bookmark App', type: 'مشروع تدريبي من Route Academy', category: 'JavaScript', description: 'تطبيق لإدارة الروابط يتيح الحفظ، التحقق، الفهرسة، والتعديل باستخدام التخزين المحلي.', stack: ['JavaScript', 'CRUD', 'Bootstrap'], link: 'https://malakmohamed119.github.io/Bookmark/' },
     { title: 'Smart Login System', type: 'مشروع تدريبي من Route Academy', category: 'JavaScript', description: 'تدفق تسجيل دخول على جانب العميل باستخدام التخزين المحلي والتحقق من المدخلات عبر Regex.', stack: ['JavaScript', 'التخزين المحلي', 'Regex'], link: 'https://malakmohamed119.github.io/Smart-LOGIN-System/' },
@@ -123,7 +123,7 @@ export class ProjectsComponent implements OnInit {
       category: 'Angular',
       description: 'Self-built Q&A review project for practicing and revising Angular and frontend topics through focused topic-based questions.',
       stack: ['Angular Topics', 'Frontend', 'JavaScript', 'Practice'],
-      link: 'https://malakmohamed119.github.io/Q-A-/',
+      link: 'https://q-a-omega.vercel.app/',
     },
     {
       title: 'Weather App',
