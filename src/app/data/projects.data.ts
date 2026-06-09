@@ -11,7 +11,7 @@ export const PROJECTS_BY_LANGUAGE = {
     { title: 'Smart Login System', type: 'مشروع تدريبي من Route Academy', category: 'JavaScript', description: 'تدفق تسجيل دخول على جانب العميل باستخدام التخزين المحلي والتحقق من المدخلات عبر Regex.', stack: ['JavaScript', 'التخزين المحلي', 'Regex'], link: 'https://malakmohamed119.github.io/Smart-LOGIN-System/' },
     { title: 'Bookmark App', type: 'مشروع تدريبي من Route Academy', category: 'JavaScript', description: 'تطبيق لإدارة الروابط يتيح الحفظ، التحقق، الفهرسة، والتعديل باستخدام التخزين المحلي.', stack: ['JavaScript', 'CRUD', 'Bootstrap'], link: 'https://malakmohamed119.github.io/Bookmark/' },
     { title: 'Trendify', type: 'صفحة تعريفية لمتجر إلكتروني', category: 'UI', description: 'صفحة متجر متجاوبة تركز على عرض المنتجات بشكل منظم واستخدام Tailwind لتجربة سلسة.', stack: ['HTML5', 'Tailwind CSS', 'Responsive Design'], link: 'https://malakmohamed119.github.io/TreNdiFy/' },
-    { title: 'Mealify', type: 'صفحة تعريفية لمطعم', category: 'UI', description: 'صفحة مطعم بتصميم حيوي، حركات CSS، شبكات متجاوبة، وتبديل بين الوضع الفاتح والداكن.', stack: ['HTML5', 'CSS3', 'Keyframes', 'Dark Mode'], link: 'https://malakmohamed119.github.io/Mealify/' },
+    { title: 'Mealify', type: 'صفحة تعريفية لمطعم', category: 'UI', description: 'صفحة مطعم بتصميم حيوي، حركات CSS، شبكات متجاوبة، وتبديل بين الوضع الفاتح والداكن.', stack: ['HTML5', 'CSS3', 'Keyframes', 'Dark Mode'], link: 'https://mealify-plum-kappa.vercel.app/' },
     { title: 'Bakery', type: 'صفحة تعريفية لمخبز', category: 'UI', description: 'صفحة مخبز بتصميم بسيط ومنظم مبنية باستخدام Bootstrap وتخطيط متجاوب.', stack: ['HTML5', 'CSS3', 'Bootstrap 5'], link: 'https://bakery-roan-seven.vercel.app' },
   ],
   en: [
@@ -86,7 +86,7 @@ export const PROJECTS_BY_LANGUAGE = {
       category: 'UI',
       description: 'Creative restaurant landing page with CSS keyframe motion, responsive grids, and dark mode switching.',
       stack: ['HTML5', 'CSS3', 'Keyframes', 'Dark Mode'],
-      link: 'https://malakmohamed119.github.io/Mealify/',
+      link: 'https://mealify-plum-kappa.vercel.app/',
     },
     {
       title: 'Bakery',
