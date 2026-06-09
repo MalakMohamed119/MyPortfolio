@@ -8,6 +8,7 @@ export const PROJECTS_BY_LANGUAGE = {
     { title: 'Movie Night', type: 'مشروع تدريبي في ITI', category: 'Angular', description: 'تطبيق لاكتشاف الأفلام يعتمد على APIs خارجية، مع عرض واضح لحالة التحميل وتصميم Bootstrap متجاوب.', stack: ['Angular', 'TypeScript', 'Bootstrap', 'API Integration'], link: 'https://movie-night-seven.vercel.app' },
     { title: 'Q&A Platform', type: 'مشروع مراجعة شخصي', category: 'Angular', description: 'منصة أسئلة وأجوبة للتدريب والمراجعة على Angular وموضوعات الواجهات الأمامية من خلال أسئلة منظمة حسب الموضوع.', stack: ['Angular Topics', 'واجهات أمامية', 'JavaScript', 'Practice'], link: 'https://q-a-omega.vercel.app/' },
     { title: 'Weather App', type: 'مشروع تدريبي من Route Academy', category: 'JavaScript', description: 'تطبيق طقس تفاعلي يجلب تحديثات الطقس الحية ويعرضها حسب بيانات الموقع.', stack: ['JavaScript', 'Bootstrap', 'Async API'], link: 'https://weather-app-nine-sand-74.vercel.app/' },
+    { title: 'Quote Studio', type: 'مولد اقتباسات عشوائية', category: 'JavaScript', description: 'تطبيق متجاوب لعرض اقتباس جديد عند كل ضغطة، مع تجنب تكرار نفس الاقتباس مرتين متتاليتين وواجهة تحريرية نظيفة بخلفية ديكورية مناسبة.', stack: ['HTML5', 'CSS3', 'Bootstrap', 'JavaScript'], link: 'https://random-quote-mu-eight.vercel.app/' },
     { title: 'Smart Login System', type: 'مشروع تدريبي من Route Academy', category: 'JavaScript', description: 'تدفق تسجيل دخول على جانب العميل باستخدام التخزين المحلي والتحقق من المدخلات عبر Regex.', stack: ['JavaScript', 'التخزين المحلي', 'Regex'], link: 'https://malakmohamed119.github.io/Smart-LOGIN-System/' },
     { title: 'Bookmark App', type: 'مشروع تدريبي من Route Academy', category: 'JavaScript', description: 'تطبيق لإدارة الروابط يتيح الحفظ، التحقق، الفهرسة، والتعديل باستخدام التخزين المحلي.', stack: ['JavaScript', 'CRUD', 'Bootstrap'], link: 'https://malakmohamed119.github.io/Bookmark/' },
     { title: 'Trendify', type: 'صفحة تعريفية لمتجر إلكتروني', category: 'UI', description: 'صفحة متجر متجاوبة تركز على عرض المنتجات بشكل منظم واستخدام Tailwind لتجربة سلسة.', stack: ['HTML5', 'Tailwind CSS', 'Responsive Design'], link: 'https://malakmohamed119.github.io/TreNdiFy/' },
@@ -55,6 +56,14 @@ export const PROJECTS_BY_LANGUAGE = {
       description: 'Interactive weather experience that fetches and renders live weather updates based on location data.',
       stack: ['JavaScript', 'Bootstrap', 'Async API'],
       link: 'https://weather-app-nine-sand-74.vercel.app/',
+    },
+    {
+      title: 'Quote Studio',
+      type: 'Random quote generator',
+      category: 'JavaScript',
+      description: 'Responsive random quote generator that displays a new quote on each click, avoids immediate repeats, and uses a clean editorial-style interface with a themed decorative background.',
+      stack: ['HTML5', 'CSS3', 'Bootstrap', 'JavaScript'],
+      link: 'https://random-quote-mu-eight.vercel.app/',
     },
     {
       title: 'Smart Login System',
