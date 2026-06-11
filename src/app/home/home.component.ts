@@ -38,7 +38,7 @@ export class HomeComponent implements AfterViewInit {
 
   readonly contact = {
     name: 'Malak Mohamed Mostafa',
-    role: 'Front-End Developer & Software Engineer',
+    role: 'Software Engineer & Front-End Developer',
     location: '15 May City, Helwan, Cairo',
     email: 'malk.mohmed211@gmail.com',
     phone: '01148403342 / 01126746232',
@@ -55,9 +55,9 @@ export class HomeComponent implements AfterViewInit {
     en: {
       name: 'Malak Mohamed Mostafa',
       heroAvailable: 'Available for Angular frontend roles',
-      heroEyebrow: 'Front-End Developer & Software Engineer',
+      heroEyebrow: 'Software Engineer & Front-End Developer',
       heroTitle: 'I build Angular interfaces that feel fast, sharp, and trusted.',
-      heroIntro: 'I am Malak Mohamed Mostafa, a frontend developer turning product ideas into polished, responsive, API-driven web experiences with strong component architecture.',
+      heroIntro: 'I am Malak Mohamed Mostafa, a software engineer and frontend developer turning product ideas into polished, responsive, API-driven web experiences with strong component architecture.',
       viewWork: 'Projects',
       downloadCv: 'Download CV',
       socials: 'Social profiles',
@@ -72,7 +72,7 @@ export class HomeComponent implements AfterViewInit {
       strengthValue: 'API-driven frontend flows',
       profile: 'Profile summary',
       badgeRole: 'Angular Developer',
-      contactRole: 'Front-End Developer & Software Engineer',
+      contactRole: 'Software Engineer & Front-End Developer',
       completedProjects: 'completed projects',
       proofCertificates: 'certificates',
       proofGraduate: 'graduated software engineer',
@@ -99,7 +99,7 @@ export class HomeComponent implements AfterViewInit {
       academicDetails: 'Academic details',
       gpa: 'GPA',
       overallGrade: 'Overall grade',
-      veryGood: 'Very Good',
+      veryGood: 'Very Good with Honors',
       graduated: 'Graduated',
       june2026: 'in June 2026',
       experienceEyebrow: 'Experience',
@@ -147,8 +147,8 @@ export class HomeComponent implements AfterViewInit {
       name: 'ملك محمد مصطفى',
       heroAvailable: 'متاحة لفرص عمل في واجهات Angular',
       heroEyebrow: 'مهندسة برمجيات ومطورة واجهات أمامية',
-      heroTitle: 'أبني واجهات Angular سريعة، أنيقة، وسهلة الاستخدام.',
-      heroIntro: 'أنا ملك محمد مصطفى، مطورة واجهات أمامية أساعد في تحويل أفكار المنتجات إلى تجارب ويب متجاوبة، منظمة، ومتصلة بالـ APIs بكود قابل للتطوير.',
+      heroTitle: 'أصمم واجهات Angular بسيطة، أنيقة، وسهلة الاستخدام.',
+      heroIntro: 'أنا ملك محمد مصطفى، مهندسة برمجيات ومطورة واجهات أمامية أساعد في تحويل أفكار المنتجات إلى تجارب ويب متجاوبة، منظمة، ومتصلة بالـ APIs بكود قابل للتطوير.',
       viewWork: 'المشاريع',
       downloadCv: 'تحميل السيرة الذاتية',
       socials: 'حسابات التواصل',
@@ -163,7 +163,7 @@ export class HomeComponent implements AfterViewInit {
       strengthValue: 'ربط البيانات والـ APIs',
       profile: 'ملخص الملف الشخصي',
       badgeRole: 'مطورة Angular',
-      contactRole: 'مطورة واجهات أمامية ومهندسة برمجيات',
+      contactRole: 'مهندسة برمجيات ومطورة واجهات أمامية',
       completedProjects: 'مشاريع مكتملة',
       proofCertificates: 'شهادات',
       proofGraduate: 'خريجة هندسة برمجيات',
@@ -190,7 +190,7 @@ export class HomeComponent implements AfterViewInit {
       academicDetails: 'التفاصيل الأكاديمية',
       gpa: 'المعدل',
       overallGrade: 'التقدير العام',
-      veryGood: 'جيد جدًا',
+      veryGood: 'جيد جدًا مع مرتبة الشرف',
       graduated: 'تخرجت',
       june2026: 'في يونيو ٢٠٢٦',
       experienceEyebrow: 'الخبرة',
@@ -260,12 +260,12 @@ export class HomeComponent implements AfterViewInit {
 
   readonly skillGroups = computed<SkillGroup[]>(() => this.language() === 'ar' ? [
     { title: 'هندسة الواجهات', description: 'بناء واجهات قابلة للتوسع بمكونات منظمة وتدفقات واضحة.', skills: ['Angular', 'TypeScript', 'JavaScript ES6+', 'RxJS', 'HTML5', 'SCSS'] },
-    { title: 'تصميم واجهات المنتجات', description: 'تحويل هدف المنتج إلى تجربة متجاوبة، سهلة الوصول، ومرتبة بصريًا.', skills: ['Responsive UI', 'Accessibility', 'Figma', 'Design Systems', 'Bootstrap 5', 'Tailwind CSS'] },
-    { title: 'ممارسات التطوير', description: 'تسليم كود قابل للصيانة مع مهارات قوية في التصحيح، ربط الـ APIs، والنشر.', skills: ['API Integration', 'Async Flows', 'Git & GitHub', 'Clean Components', 'Deployment', 'Chrome DevTools'] },
+    { title: 'تصميم واجهات المنتجات', description: 'تحويل هدف المنتج إلى تجربة متجاوبة، سهلة الوصول، ومرتبة بصريًا.', skills: ['Responsive UI', 'Accessibility', 'UI Layout', 'Design Systems', 'Bootstrap 5', 'Tailwind CSS'] },
+    { title: 'كتابة كود منظم', description: 'تسليم كود قابل للصيانة مع مهارات قوية في التصحيح، ربط الـ APIs، والنشر.', skills: ['API Integration', 'Async Flows', 'Git & GitHub', 'Clean Components', 'Deployment', 'Chrome DevTools'] },
     { title: 'أساسيات علوم الحاسب', description: 'أساس قوي في هندسة البرمجيات وحل المشكلات بطريقة منظمة.', skills: ['OOP', 'Data Structures', 'Algorithms', 'C++', 'Python', 'Problem Solving'] },
   ] : [
     { title: 'Frontend Engineering', description: 'Building scalable interfaces with component architecture and clean stateful flows.', skills: ['Angular', 'TypeScript', 'JavaScript ES6+', 'RxJS', 'HTML5', 'SCSS'] },
-    { title: 'Product UI', description: 'Translating product intent into responsive, accessible, polished experiences.', skills: ['Responsive UI', 'Accessibility', 'Figma', 'Design Systems', 'Bootstrap 5', 'Tailwind CSS'] },
+    { title: 'Product UI', description: 'Translating product intent into responsive, accessible, polished experiences.', skills: ['Responsive UI', 'Accessibility', 'UI Layout', 'Design Systems', 'Bootstrap 5', 'Tailwind CSS'] },
     { title: 'Engineering Practices', description: 'Shipping maintainable work with strong debugging, API, and deployment habits.', skills: ['API Integration', 'Async Flows', 'Git & GitHub', 'Clean Components', 'Deployment', 'Chrome DevTools'] },
     { title: 'CS Foundation', description: 'Grounded in software engineering fundamentals and structured problem solving.', skills: ['OOP', 'Data Structures', 'Algorithms', 'C++', 'Python', 'Problem Solving'] },
   ]);
@@ -286,7 +286,7 @@ export class HomeComponent implements AfterViewInit {
       skills: [
         'HTML 5', 'CSS3', 'SASS', 'Bootstrap 5', 'Tailwind 4', 'Web Accessibility', 'JavaScript',
         'DOM & BOM', 'Async Programming', 'Regular expressions', 'ECMAScript 6+',
-        'TypeScript', 'JQuery', 'SASS', 'Hosting and Domain', 'Git', 'Figma', 'Angular',
+        'TypeScript', 'JQuery', 'SASS', 'Hosting and Domain', 'Git', 'Angular',
       ],
     },
     {
@@ -312,7 +312,7 @@ export class HomeComponent implements AfterViewInit {
       skills: [
         'HTML 5', 'CSS3', 'SASS', 'Bootstrap 5', 'Tailwind 4', 'Web Accessibility', 'JavaScript',
         'DOM & BOM', 'Async Programming', 'Regular expressions', 'ECMAScript 6+',
-        'TypeScript', 'JQuery', 'SASS', 'Hosting and Domain', 'Git', 'Figma', 'Angular',
+        'TypeScript', 'JQuery', 'SASS', 'Hosting and Domain', 'Git', 'Angular',
       ],
     },
     {
