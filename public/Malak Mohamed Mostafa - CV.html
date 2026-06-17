@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Malak Mohamed Mostafa - Software Engineer | Front-End Developer CV</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f8fafc;
+      color: #1e293b;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12.8px;
+      line-height: 1.32;
+    }
+
+    .page {
+      max-width: 850px;
+      margin: 8px auto;
+      padding: 18px 30px;
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 9px;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 8px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 25px;
+      line-height: 1.2;
+      font-weight: 700;
+      color: #0f172a;
+      letter-spacing: 0.5px;
+    }
+
+    .role {
+      margin: 2px 0 5px;
+      font-size: 15px;
+      font-weight: 600;
+      color: #2563eb;
+    }
+
+    .contact {
+      font-size: 13px;
+      color: #475569;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 5px 10px;
+    }
+
+    .contact span, .contact a {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .separator {
+      color: #94a3b8;
+      font-weight: 500;
+    }
+
+    a {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    a:hover {
+      color: #1d4ed8;
+    }
+
+    section {
+      margin-top: 9px;
+    }
+
+    h2 {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 5px;
+      font-size: 15px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #0f172a;
+      letter-spacing: 0.5px;
+    }
+
+    h2::after {
+      content: "";
+      flex: 1;
+      border-bottom: 2px solid #e2e8f0;
+      transform: translateY(1px);
+    }
+
+    h3 {
+      margin: 0;
+      font-size: 14px;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .client-tag {
+      font-size: 12px;
+      color: #64748b;
+      font-weight: 500;
+      font-style: italic;
+    }
+
+    p {
+      margin: 3px 0 5px;
+      color: #334155;
+    }
+
+    ul {
+      margin: 3px 0 0 17px;
+      padding: 0;
+      color: #334155;
+    }
+
+    li {
+      margin-bottom: 2px;
+    }
+
+    .item {
+      margin-bottom: 9px;
+      padding-bottom: 6px;
+    }
+
+    .item-project {
+      margin-bottom: 7px;
+    }
+
+    .meta {
+      margin-top: 2px;
+      font-size: 12.5px;
+      color: #64748b;
+      font-weight: 500;
+    }
+
+    .project-header,
+    .experience-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: baseline;
+    }
+
+    .tech-stack {
+      font-size: 12px;
+      font-weight: 600;
+      color: #1d4ed8;
+      background: #eff6ff;
+      padding: 1px 7px;
+      border-radius: 12px;
+      display: inline;
+      white-space: nowrap;
+    }
+
+    .project-line {
+      margin-top: 2px;
+    }
+
+    .date-text {
+      white-space: nowrap;
+      font-size: 12.5px;
+      font-weight: 500;
+      color: #64748b;
+    }
+
+    .project-links {
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .skills-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .skills-list li {
+      margin-bottom: 3px;
+      color: #334155;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .label {
+      font-weight: 700;
+      color: #0f172a;
+      display: inline-block;
+      min-width: 150px;
+      flex-shrink: 0;
+    }
+
+    .portfolio-note {
+      margin: 2px 0 0;
+      font-size: 12px;
+      color: #64748b;
+      font-style: italic;
+    }
+
+    @media print {
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      body {
+        background: #ffffff;
+        font-size: 8.2px;
+        line-height: 1.12;
+      }
+
+      .page {
+        max-width: none;
+        margin: 0;
+        width: 210mm;
+        height: 297mm;
+        max-height: 297mm;
+        padding: 4mm 6mm;
+        border-radius: 0;
+        box-shadow: none;
+        overflow: hidden;
+      }
+
+      header {
+        margin-bottom: 2px;
+        padding-bottom: 2px;
+        border-bottom-width: 1px;
+      }
+
+      h1 {
+        font-size: 14.5px;
+        line-height: 1.1;
+      }
+
+      .role {
+        margin: 0;
+        font-size: 9px;
+      }
+
+      .contact {
+        font-size: 8.2px;
+        gap: 0 4px;
+        flex-wrap: nowrap;
+      }
+
+      .contact-row {
+        display: contents;
+      }
+
+      section {
+        margin-top: 2px;
+      }
+
+      h2 {
+        margin-bottom: 1px;
+        font-size: 9.2px;
+        gap: 3px;
+        letter-spacing: 0.2px;
+      }
+
+      h2::after {
+        border-bottom-width: 1px;
+      }
+
+      h3 {
+        font-size: 8.8px;
+      }
+
+      p {
+        margin: 0 0 1px;
+      }
+
+      ul {
+        margin-top: 0;
+        margin-left: 10px;
+        padding-left: 0;
+      }
+
+      li {
+        margin-bottom: 0;
+      }
+
+      .item {
+        margin-bottom: 2px;
+        padding-bottom: 0;
+      }
+
+      .item-project {
+        margin-bottom: 1px;
+      }
+
+      .client-tag {
+        font-size: 7.8px;
+      }
+
+      .meta,
+      .date-text {
+        font-size: 8px;
+      }
+
+      .project-header,
+      .experience-header {
+        gap: 3px;
+      }
+
+      .project-links {
+        font-size: 8px;
+      }
+
+      .tech-stack {
+        padding: 0 3px;
+        border-radius: 4px;
+        font-size: 7.6px;
+      }
+
+      .project-line {
+        margin-top: 0;
+      }
+
+      .skills-list li {
+        margin-bottom: 0;
+        display: block;
+      }
+
+      .label {
+        min-width: 0;
+        display: inline;
+      }
+
+      .label::after {
+        content: " ";
+      }
+
+      .portfolio-note {
+        font-size: 7.6px;
+        margin-top: 1px;
+      }
+
+      .print-hide {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+
+    <header>
+      <h1>Malak Mohamed Mostafa</h1>
+      <p class="role">Software Engineer | Front-End Developer | Angular Developer</p>
+      <div class="contact">
+        <span class="contact-row">
+          <span>15 May City, Helwan, Cairo</span>
+          <span class="separator">|</span>
+          <span>01148403342 / 01126746232</span>
+          <span class="separator">|</span>
+          <a href="mailto:malk.mohmed211@gmail.com">malk.mohmed211@gmail.com</a>
+          <span class="separator">|</span>
+          <a href="https://www.linkedin.com/in/malak-mohamed-mostafa-762996275/" target="_blank">LinkedIn</a>
+          <span class="separator">|</span>
+          <a href="https://github.com/MalakMohamed119" target="_blank">GitHub</a>
+        </span>
+      </div>
+    </header>
+
+    <section>
+      <h2>Profile</h2>
+      <p>
+        Front-End Developer specializing in Angular, TypeScript, and responsive web applications. Experienced in API integration, reusable components, and clean UI. Portfolio:
+        <a href="https://my-portfolio-kohl-one-gjqf59j8lb.vercel.app/" target="_blank">my-portfolio-kohl-one-gjqf59j8lb.vercel.app</a>.
+      </p>
+    </section>
+
+    <section>
+      <h2>Technical Skills</h2>
+      <ul class="skills-list">
+        <li><span class="label">Frontend:</span> Angular, TypeScript, JavaScript ES6+, HTML5, CSS3, SCSS, Bootstrap 5, Tailwind CSS, Responsive Design</li>
+        <li><span class="label">Core & Tools:</span> API Integration, RxJS, DOM Manipulation, Async JS, Git, GitHub, VS Code, Vercel</li>
+        <li><span class="label">Programming:</span> C, C++, Java, Python, OOP, Data Structures, Algorithms, MongoDB & MySQL Basics</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <div class="item">
+        <div class="experience-header">
+          <h3>Bachelor of Software Engineering</h3>
+          <span class="date-text">Graduated: June 2026</span>
+        </div>
+        <p>Faculty of Computers and Artificial Intelligence, Capital University, Cairo | GPA: 3.3 / 4.0 (Very Good)</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Professional Experience</h2>
+      <div class="item">
+        <div class="experience-header">
+          <h3>Programming Instructor</h3>
+          <span class="date-text">October 2024 - Present</span>
+        </div>
+        <p>3C - Creative Children Community | Cairo, Egypt</p>
+        <ul>
+          <li>Teach Scratch, Python, HTML, CSS, and App Inventor through interactive, project-based lessons.</li>
+          <li>Guide students in building games, apps, and websites with personalized learning support.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+
+      <div class="item-project">
+        <div class="project-header">
+          <h3>LoCum <span class="client-tag">(Freelance)</span></h3>
+          <div class="project-links"><a href="https://lo-cum.vercel.app/" target="_blank">Live Demo</a></div>
+        </div>
+        <p class="project-line"><span class="tech-stack">Angular, TypeScript, SCSS, API</span> Healthcare staffing platform; co-developed responsive UI and API workflows with Abdulrahman Mohamed.</p>
+      </div>
+
+      <div class="item-project">
+        <div class="project-header">
+          <h3>MedGuid <span class="client-tag">(Graduation)</span></h3>
+          <div class="project-links"><a href="https://medical-finalproject.vercel.app" target="_blank">Live Demo</a></div>
+        </div>
+        <p class="project-line"><span class="tech-stack">Angular, TypeScript, SSR, SCSS, API</span> Healthcare platform for patients, doctors, and admins with booking, records, role-based dashboards, and AI assistant.</p>
+      </div>
+
+      <div class="item-project">
+        <div class="project-header">
+          <h3>EvoShop <span class="client-tag">(Route Academy)</span></h3>
+          <div class="project-links"><a href="https://e-commerce-five-kappa-11.vercel.app" target="_blank">Live Demo</a></div>
+        </div>
+        <p class="project-line"><span class="tech-stack">Angular, TypeScript, RxJS, Tailwind</span> E-commerce app with auth, cart, dynamic APIs, and payment simulation.</p>
+      </div>
+
+      <div class="item-project">
+        <div class="project-header">
+          <h3>Movie Night <span class="client-tag">(ITI)</span></h3>
+          <div class="project-links"><a href="https://movie-night-seven.vercel.app" target="_blank">Live Demo</a></div>
+        </div>
+        <p class="project-line"><span class="tech-stack">Angular, TypeScript, Bootstrap, API</span> Movie discovery app with external APIs and async loading states.</p>
+      </div>
+
+      <div class="item-project print-hide">
+        <div class="project-header">
+          <h3>Q&amp;A Platform <span class="client-tag">(Revision)</span></h3>
+          <div class="project-links"><a href="https://q-a-omega.vercel.app/" target="_blank">Live Demo</a></div>
+        </div>
+        <p class="project-line"><span class="tech-stack">JavaScript, HTML5, CSS3</span> Interactive quiz platform with DOM manipulation and real-time scoring.</p>
+      </div>
+
+      <div class="item-project print-hide">
+        <div class="project-header">
+          <h3>Weather App <span class="client-tag">(Route Academy)</span></h3>
+          <div class="project-links"><a href="https://weather-app-nine-sand-74.vercel.app/" target="_blank">Live Demo</a></div>
+        </div>
+        <p class="project-line"><span class="tech-stack">JavaScript, Bootstrap, Async API</span> Live weather app with location-based async data fetching.</p>
+      </div>
+
+      <div class="item-project print-hide">
+        <div class="project-header">
+          <h3>Bookmark App <span class="client-tag">(Route Academy)</span></h3>
+          <div class="project-links"><a href="https://malakmohamed119.github.io/Bookmark/" target="_blank">Live Demo</a></div>
+        </div>
+        <p class="project-line"><span class="tech-stack">JavaScript, CRUD, Bootstrap</span> Bookmark manager with LocalStorage CRUD operations.</p>
+      </div>
+
+      <p class="portfolio-note">Additional projects (Q&amp;A, Weather, Bookmark, UI pages): see portfolio link above.</p>
+    </section>
+
+    <section>
+      <h2>Courses & Certifications</h2>
+      <div class="item">
+        <p><strong>Front-End Web Development, Route Academy</strong> (Mar 2025 - Sep 2025) — Angular, TypeScript, SASS, Bootstrap, Tailwind, APIs, Git, and deployed front-end apps.</p>
+        <p><strong>MEAN Stack Development, ITI</strong> (Jul 2025 - Aug 2025) — Angular front-end architecture and MEAN stack applications.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Volunteer & Extracurricular Activities</h2>
+      <ul>
+        <li><strong>Helwan ICPC Community:</strong> Competitive programming and problem solving in C++.</li>
+        <li><strong>Training Camp - Helwan:</strong> Algorithmic challenges in C.</li>
+        <li><strong>Minders'23 Workshop:</strong> HTML, CSS, and JavaScript mentorship workshop.</li>
+      </ul>
+    </section>
+
+  </main>
+</body>
+</html>
