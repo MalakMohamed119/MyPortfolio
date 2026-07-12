@@ -5,7 +5,7 @@ export const PROJECTS_BY_LANGUAGE = {
   ar: [
     { title: 'LoCum', type: 'منصة عمل حر في المجال الصحي', category: 'Angular', description: 'منصة متجاوبة تساعد دور الرعاية والمنشآت التمريضية على طلب مساعدين مؤهلين من خلال واجهة Angular نظيفة وقابلة للتوسع.', stack: ['Angular', 'TypeScript', 'SCSS', 'API Integration'], link: 'https://lo-cum.vercel.app/', featured: true },
     { title: 'EvoShop', type: 'مشروع تدريبي من Route Academy', category: 'Angular', description: 'تجربة متجر إلكتروني متكاملة تشمل تسجيل الدخول، إدارة السلة، عرض بيانات ديناميكية من API، ومحاكاة عملية الدفع.', stack: ['Angular', 'TypeScript', 'RxJS', 'Tailwind CSS'], link: 'https://e-commerce-five-kappa-11.vercel.app' },
-    { title: 'Student Management System', type: 'نظام إدارة طلاب للعمل الحر', category: 'Angular', description: 'نظام للمدرسين يتابع الحضور والغياب والدرجات وإدارة الطلاب مع واجهة إدارة أنيقة.', stack: ['Angular', 'TypeScript', 'SCSS', 'Frontend'], link: 'https://e-student-management-system.vercel.app/landing' },
+    { title: 'Student Management System', type: 'نظام إدارة طلاب للعمل الحر', category: 'Angular', description: 'نظام للمدرسين يتابع الحضور والغياب والدرجات وإدارة الطلاب مع واجهة إدارة أنيقة.', stack: ['Angular', 'TypeScript', 'SCSS', 'Frontend'], link: 'https://e-student-management-system.vercel.app/' },
     { title: 'Q&A Platform', type: 'مشروع مراجعة شخصي', category: 'JavaScript', description: 'منصة أسئلة وأجوبة مبنية بـ JavaScript للتدريب والمراجعة على Angular وموضوعات الواجهات الأمامية من خلال أسئلة منظمة حسب الموضوع.', stack: ['JavaScript', 'HTML5', 'CSS3', 'Frontend'], link: 'https://q-a-omega.vercel.app/' },
     { title: 'MedGuid', type: 'مشروع التخرج', category: 'Angular', description: 'منصة رعاية صحية شاملة تربط المرضى والأطباء والإدارة بتجربة رقمية متكاملة، مع مساعد صحي ذكي للحجز والسجلات الطبية ولوحات تحكم حسب الدور.', stack: ['Angular', 'TypeScript', 'SSR', 'SCSS', 'API Integration'], link: 'https://medical-finalproject.vercel.app' },
     { title: 'Movie Night', type: 'مشروع تدريبي في ITI', category: 'Angular', description: 'تطبيق لاكتشاف الأفلام يعتمد على APIs خارجية، مع عرض واضح لحالة التحميل وتصميم Bootstrap متجاوب.', stack: ['Angular', 'TypeScript', 'Bootstrap', 'API Integration'], link: 'https://movie-night-seven.vercel.app' },
@@ -32,7 +32,7 @@ export const PROJECTS_BY_LANGUAGE = {
       category: 'Angular',
       description: 'Teacher-facing system for tracking attendance, absences, grades, and student management with a polished admin workflow.',
       stack: ['Angular', 'TypeScript', 'SCSS', 'Frontend'],
-      link: 'https://e-student-management-system.vercel.app/landing',
+      link: 'https://e-student-management-system.vercel.app/',
     },
     {
       title: 'EvoShop',
